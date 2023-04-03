@@ -1,0 +1,69 @@
+@import url('./theme.css');
+
+h1 {
+    font-family: var(--font-title-1);
+    font-size: var(--font-size-title-1);
+}
+
+h2 {
+    font-family: var(--font-title-2);
+    font-size: var(--font-size-title-2);
+}
+
+h3 {
+    font-family: var(--font-title-3);
+    font-size: var(--font-size-title-3);
+}
+
+h4 {
+    font-family: var(--font-title-4);
+    font-size: var(--font-size-title-4);
+}
+
+h5 {
+    font-family: var(--font-title-5);
+    font-size: var(--font-size-title-5);
+}
+
+p {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+}
+
+div.color-palette {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.color-palette .color {
+    width: 80px;
+    height: 80px;
+    margin: 5%;
+    padding: 0;
+}
+
+.color.primary {
+    background-color: var(--color-primary);
+}
+
+.color.secondary {
+    background-color: var(--color-secondary);
+}
+
+.color.tertiary {
+    background-color: var(--color-tertiary);
+}
+
+.color.quaternary {
+    background-color: var(--color-quaternary);
+}
+
+.color.quinary {
+    background-color: var(--color-quinary);
+}
