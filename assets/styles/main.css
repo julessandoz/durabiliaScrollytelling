@@ -1,5 +1,7 @@
 @import url('./theme.css');
 
+/* MAIN STYLING */
+
 h1 {
     font-family: var(--font-title-1);
     font-size: var(--font-size-title-1);
@@ -30,40 +32,161 @@ p {
     font-size: var(--font-size-body);
 }
 
-div.color-palette {
+#top-logo {
+    position: absolute;
+    top: clamp(5px, 5vh, 35px);
+    left: clamp(5px, 5vw, 35px);
+    width: clamp(150px, 15vw, 300px);
+    height: auto;
+}
+
+#top-logo img{
+    width: 100%;
+    height: auto;
+}
+
+.section {
+    position: relative;
+    width: 100%;
+    height: 90vh;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: center;
+}
+
+/* SECTION 1 - Intro */
+
+#section-1 .intro-container {
+    position: relative;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#section-1 .planet-container {
+    position: relative;
+    width: 45%;
+    height: 100%;
+}
+
+#planet-intro {
     width: 100%;
     height: 100%;
-    margin: 0;
-    padding: 0;
 }
 
-.color-palette .color {
-    width: 80px;
-    height: 80px;
-    margin: 5%;
-    padding: 0;
+/* SECTION 2 - Planet */
+#planet-intro-clean {
+    width: clamp(500px, 55vw, 1100px);
+    height: auto;
 }
 
-.color.primary {
-    background-color: var(--color-primary);
+
+/* SECTION 3 - About */
+.map-container {
+    padding: clamp(0px, 5vh, 50px) clamp(0px, 5vw, 50px);
 }
 
-.color.secondary {
-    background-color: var(--color-secondary);
+#swiss-map{
+    width: clamp(500px, 80vw, 1200px);
 }
 
-.color.tertiary {
-    background-color: var(--color-tertiary);
+
+.about-text {
+    width: 30%;
+    padding: 0 5%;
 }
 
-.color.quaternary {
-    background-color: var(--color-quaternary);
+/* SECTION 4 - ABOUT */
+#section-4 .map-container {
+    width: 50%;
 }
 
-.color.quinary {
-    background-color: var(--color-quinary);
+#section-4 .collab-container {
+    padding: clamp(0px, 5vh, 50px) clamp(0px, 5vw, 50px);
+    width: 50%;
+}
+
+#collab-img {
+    width: clamp(500px, 80%, 100%);
+    height: auto;
+}
+
+/* SECTION 5 - LOGO */
+#logo-durabilia {
+    width: clamp(500px, 60vw, 900px);
+    height: auto;
+}
+
+/* SECTIONS 6 TO 8 - PROJECT DESCRIPTION */
+#section-6, #section-7, #section-8 {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-container {
+    width: 40%;
+    padding: 0 5%;
+    text-align: center;
+}
+
+/* SECTION 9 - SDG */
+#section-9 {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title-container {
+    width: 50%;
+    text-align: center;
+    margin-bottom: 6vh;
+}
+
+.sdg-blocks-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 5%;
+  }
+  
+  .sdg-block {
+    flex: 0 0 clamp(80px, 8vw, 200px);
+    height: clamp(80px, 8vw, 200px);
+    margin: 0 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #dddddd;
+  }
+  
+  .sdg-block:nth-child(n + 7) {
+    display: none;
+  }
+
+/* SECTION 10 - SALES POINTS */
+
+.sales-points-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    padding: 0 5%;
+}
+
+.sales-point {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #dddddd;
+    margin: 1vh 0;
+}
+
+.sales-point.active {
+    background-color: #000000;
+    color: #ffffff;
 }
