@@ -115,7 +115,7 @@ var tlLogo = gsap.timeline({
 
 // Add an animation to the timeline
 tlLogo.to("#logo-durabilia", {
-    opacity: 1,
+    // opacity: 1,
     scale: 1.2,
     duration: 0.5,
     ease: "power1.inOut"
@@ -145,21 +145,21 @@ tlLogo.to("#logo-durabilia", {
 // text reveal sur section 10-----------------
 
 // animate section 10
-tlScroll.from(".section-10-item", {
-    scrollTrigger: {
-        trigger: "#section-10",
-        start: "top center",
-        end: "+=200",
-        scrub: 1,
-        markers: true,
-        //toggleActions: "play reverse play reverse"
-    },
-    opacity: 0,
+// tlScroll.from(".section-10-item", {
+//     scrollTrigger: {
+//         trigger: "#section-10",
+//         start: "top center",
+//         end: "+=200",
+//         scrub: 1,
+//         markers: true,
+//         //toggleActions: "play reverse play reverse"
+//     },
+//     opacity: 0,
 
-    duration: 1,
-    stagger: 0.5,
-    ease: "power1.inOut"
-}, 'start');
+//     duration: 1,
+//     stagger: 0.5,
+//     ease: "power1.inOut"
+// }, 'start');
 
 
 
