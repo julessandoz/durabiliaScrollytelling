@@ -4,57 +4,15 @@ console.log('onScroll')
 // activate scrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
-// add scrollTrigger to #section-4 from opacity 0 toopacity 1
-// gsap.to("#section-4", {
-//     scrollTrigger: {
-//         trigger: "#section-4",
-//         start: "top 80%",
-//         end: "bottom 20%",
-//         scrub: 1,
+// Définition des timelines
 
-//     },
-//     opacity: 1,
-//     duration: 1,
-//     ease: "none"
-// });
-
-// gsap.fromTo("#section-4", {
-//     scrollTrigger: {
-//         trigger: "#section-4",
-//         start: "top top",
-//         end: "+=200",
-//         scrub: 1,
-//         markers: true,
-//         toggleActions: "play reverse play reverse"
-//     },
-//     x: -2000,
-//     duration: 1,
-// // easing power 1 is linear
-// }, {
-//     x:0,
-//     duration: 1,
-//     ease: "none"
-// });
+let tlScroll = gsap.timeline({});
+tlScroll.add('start');
 
 
-// gsap.fromTo("#section-4", {
-//     scrollTrigger: {
-//         trigger: "#section-4",
-//         start: "top middle",
-//         end: "+=200",
-//         scrub: true,
-//         markers: true,
-//         toggleActions: "play reverse play reverse"
-//     },
-//     x: -2000,
-// // easing power 1 is linear
-// }, {
-//     x:0,
-//     duration: 1,
-//     ease: "none"
-// });
+// Zoom sur suisse-----------------
 
-gsap.from("#section-4", {
+tlScroll.from(".section-4-item", {
     scrollTrigger: {
         trigger: "#section-4",
         
@@ -67,5 +25,81 @@ gsap.from("#section-4", {
         //opacity: 0,
         x: -2000,
         duration: 1,
+        stagger: 0.5,
         ease: "power1.inOut"
-        });
+        }, 'start');
+
+
+// animation logo durabilia-----------------
+
+tlScroll.from("#logo-durabilia", {
+    scrollTrigger: {
+        trigger: "#section-5",
+        start: "top center",
+        end: "+=200",
+        scrub: 1,
+        markers: true,
+        //toggleActions: "play reverse play reverse"
+    },
+    opacity: 0,
+    duration: 1,
+    ease: "power1.inOut"
+}, 'start');
+
+
+
+// text reveal sur section 10-----------------
+
+// animate section 10
+tlScroll.from(".section-10-item", {
+    scrollTrigger: {
+        trigger: "#section-10",
+        start: "top center",
+        end: "+=200",
+        scrub: 1,
+        markers: true,
+        //toggleActions: "play reverse play reverse"
+    },
+    opacity: 0,
+    x: -2000,
+    duration: 1,
+    stagger: 0.5,
+    ease: "power1.inOut"
+}, 'start');
+
+// select all elements and animate background of the element who's on scroll
+gsap.utils.toArray(".section-10-item").forEach((section) => {
+    gsap.to(section, {
+        scrollTrigger: {
+            trigger: section,
+            start: "top center",
+            end: "+=50",
+            scrub: 1,
+            markers: true,
+            //toggleActions: "play reverse play reverse"
+        },
+        backgroundColor: "#000",
+        color:"#fff",
+        duration: 0.2,
+        ease: "power1.inOut"
+    });
+
+//  REVERT TO INITIAL STATE AFTER
+    gsap.to(section, {
+        scrollTrigger: {
+            trigger: section,
+            start: "bottom center",
+            end: "+=50",
+            scrub: 1,
+            markers: true,
+            //toggleActions: "play reverse play reverse"
+        },
+        backgroundColor: "#fff",
+        color:"#000",
+        duration: 0.2,
+        ease: "power1.inOut"
+
+    });
+});
+
+
