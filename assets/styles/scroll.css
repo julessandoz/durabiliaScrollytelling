@@ -12,6 +12,7 @@
 
 .sales-point {
     width: 100%;
+    height: 200px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -24,3 +25,19 @@
     background-color: #000000;
     color: #ffffff;
 }
+
+
+
+.card-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sales-point {
+    transform: scale(0.1);
+    transform-origin: center center;
+}
+

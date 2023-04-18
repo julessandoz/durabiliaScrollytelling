@@ -100,6 +100,12 @@ p {
 }
 
 /* SECTION 4 - ABOUT */
+
+#section-4{
+    height: 100vh;
+    position: relative;
+}
+
 #section-4 .map-container {
     width: 50%;
 }
@@ -115,15 +121,27 @@ p {
 }
 
 /* SECTION 5 - LOGO */
+
+#section-5 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #dddddd;
+    height: 100vh !important;
+}
+
 #logo-durabilia {
     width: clamp(500px, 60vw, 900px);
     height: auto;
 }
 
 /* SECTIONS 6 TO 8 - PROJECT DESCRIPTION */
+
 #section-6, #section-7, #section-8 {
     flex-direction: column;
     justify-content: center;
+    background-color: white;
+
 }
 
 .text-container {
@@ -136,6 +154,9 @@ p {
 #section-9 {
     flex-direction: column;
     justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: blue;
 }
 
 .title-container {
