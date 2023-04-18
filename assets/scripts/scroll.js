@@ -94,10 +94,14 @@ gsap.utils.toArray(".section-10-item").forEach((section) => {
             markers: true,
             //toggleActions: "play reverse play reverse"
         },
-        backgroundColor: "#fff",
+
+        backgroundColor: "#ddd",
         color:"#000",
         duration: 0.2,
-        ease: "power1.inOut"
+        opacity: 0.5,
+        ease: "power1.inOut",
+        // alpha opacity
+     
 
     });
 });

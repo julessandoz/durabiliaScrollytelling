@@ -1,0 +1,26 @@
+/* SECTION 10 - SALES POINTS */
+
+.sales-points-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    padding: 0 5%;
+
+}
+
+.sales-point {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #dddddd;
+    margin: 1vh 0;
+}
+
+.sales-point.active {
+    background-color: #000000;
+    color: #ffffff;
+}
