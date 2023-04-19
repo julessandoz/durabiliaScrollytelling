@@ -202,7 +202,29 @@ gsap.utils.toArray(".section-10-item").forEach((section, index) => {
 });
 
 
-  
+// SECTION 9------------------------------------------------  
+
+// const section = document.querySelector("#section-10");
+const spacer = document.createElement("div");
+spacer.style.height = '3900px';
+// section.parentNode.appendChild(spacer, section);
+
+// start gsap animation on section-9
+let tlCard9 = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#section-9",
+      start: "top top",
+      end: "bottom+=1000 top",
+      scrub: true,
+      pin: true,
+      pinSpacing: true,
+      pinnedContainer: '.sect9-cont',
+      
+    }
+  });
+
+
+
 //   const salesPoints = document.querySelector(".sales-points-container");
   
 //   ScrollTrigger.create({

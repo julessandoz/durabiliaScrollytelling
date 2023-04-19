@@ -162,9 +162,16 @@ p {
     flex-direction: column;
     justify-content: center;
     width: 100vw;
+    height: 100vh;
+    /* height: 100vh; */
+    /* height: 1800px; */
     background-color: blue;
-    padding: 30vh 0;
+    /* padding: 30vh 0; */
 }
+
+/* .sect9-cont{
+    min-height: 1800px
+} */
 
 .title-container {
     width: 50%;
@@ -172,27 +179,127 @@ p {
     margin-bottom: 6vh;
 }
 
-.sdg-blocks-container {
+/* .sdg-blocks-container {
     display: flex;
     justify-content: space-around;
-    margin: 0 5%;
+    /* margin: 0 5%; 
+} 
+*/
+
+.sdg-blocks-container {
+    /* display: flex;
+    justify-content: space-around; */
+    margin: 0 5%; 
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+} 
+
+
+.sdg-block {
+    width: 20vw;
+    background-color: black;
+    /* flex: 0 0 clamp(80px, 8vw, 200px);
+    height: clamp(80px, 8vw, 200px); */
+    /* margin: 0 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap; */
+    align-items: center;
+    background-color: #dddddd;
+    /* display: inline; */
 }
 
+
+/* make .sdg-block as squares and displayed randomly */
 .sdg-block {
     flex: 0 0 clamp(80px, 8vw, 200px);
     height: clamp(80px, 8vw, 200px);
     margin: 0 1vw;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    align-items: center;
-    background-color: #dddddd;
+  
 }
 
-.sdg-block:nth-child(n + 7) {
-    display: none;
+.sdg-block:nth-child(1) {
+    background-color: #ff0000;
 }
+
+.sdg-block:nth-child(2) {
+    background-color: #ff7f00;
+}
+
+.sdg-block:nth-child(3) {
+    background-color: #ffff00;
+}
+
+.sdg-block:nth-child(4) {
+    background-color: #00ff00;
+}
+
+.sdg-block:nth-child(5) {
+    background-color: #0000ff;
+}
+
+.sdg-block:nth-child(6) {
+    background-color: #4b0082;
+}
+
+.sdg-block:nth-child(7) {
+    background-color: #ee82ee;
+}
+
+.sdg-block:nth-child(8) {
+    background-color: #ff0000;
+}
+
+.sdg-block:nth-child(9) {
+    background-color: #ff7f00;
+}
+
+.sdg-block:nth-child(10) {
+    background-color: #ffff00;
+}
+
+.sdg-block:nth-child(11) {
+    background-color: #00ff00;
+}
+
+.sdg-block:nth-child(12) {
+    background-color: #0000ff;
+}
+
+.sdg-block:nth-child(13) {
+    background-color: #4b0082;
+}
+
+.sdg-block:nth-child(14) {
+    background-color: #ee82ee;
+}
+
+.sdg-block:nth-child(15) {
+    background-color: #ff0000;
+}
+
+.sdg-block:nth-child(16) {
+    background-color: #ff7f00;
+}
+
+.sdg-block:nth-child(17) {
+    background-color: #ffff00;
+}
+
+
+
+
+/* .sdg-block:nth-child(n + 7) {
+    display: none;
+} */
 
 /* SECTION 10 - SALES POINTS */
 #section-10 {

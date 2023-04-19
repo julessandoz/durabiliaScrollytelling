@@ -1,3 +1,6 @@
+@import url('./theme.css');
+
+
 /* SECTION 10 - SALES POINTS */
 
 .sales-points-container {
@@ -41,3 +44,14 @@
     transform-origin: center center;
 }
 
+.sect9-cont {
+    min-height: 100vh;
+  }
+
+/* avatars */
+
+.avatarContainer{
+    width: 100vw;
+    height: 100vh;
+    content: "";
+}
