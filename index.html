@@ -2,12 +2,22 @@
 <html lang="en">
 
 <head>
+    <!-- Imports js --------------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
+
+
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Durabilia</title>
     <link rel="stylesheet" href="assets/styles/main.css">
     <script src="assets/scripts/main.js" defer></script>
+    <!-- import scroll.js script -->
+    <script src="assets/scripts/scroll.js" defer></script>
+
 </head>
 
 <body>
@@ -40,19 +50,22 @@
             </div>
             <div class="about-text">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nisi cum ab, molestias
-                    consectetur minus ad, officiis laudantium consequatur placeat dolorem natus commodi illum quod explicabo earum
+                    consectetur minus ad, officiis laudantium consequatur placeat dolorem natus commodi illum quod
+                    explicabo earum
                     pariatur itaque inventore!</p>
             </div>
         </section>
         <section class="section" id="section-4">
-            <div class="map-container">
-                <img id="swiss-map-zoomed" src="/assets/images/switzerland-zoom-20.svg" alt="map of Switzerland zoomed on VD and FR">
+            <div class="map-container section-4-item">
+                <img id="swiss-map-zoomed" src="/assets/images/switzerland-zoom-20.svg"
+                    alt="map of Switzerland zoomed on VD and FR">
             </div>
-            <div class="collab-container">
+            <div class="collab-container section-4-item">
                 <img id="collab-img" src="/assets/images/collab.png" alt="collaboration échange">
             </div>
         </section>
         <section class="section" id="section-5">
+            <div class="spacer"></div>
             <img id="logo-durabilia" src="/assets/images/logo.svg" alt="logo durabilia">
         </section>
         <section class="section" id="section-6">
@@ -60,8 +73,12 @@
                 <img src="/assets/images/icons/community.svg" alt="community">
             </div>
             <div class="text-container">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, quo itaque! Temporibus cupiditate aut, repellat rerum nihil accusantium commodi cumque odio architecto hic. Rerum eum nihil perferendis cumque rem nobis.
-                Ut cum voluptatibus autem atque aperiam? Architecto voluptate quo ipsa aspernatur soluta modi neque officiis. Nisi ut voluptatibus aliquam nostrum pariatur laborum, beatae cumque nihil, soluta, architecto ipsam dolorem asperiores!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, quo itaque! Temporibus cupiditate aut,
+                    repellat rerum nihil accusantium commodi cumque odio architecto hic. Rerum eum nihil perferendis
+                    cumque rem nobis.
+                    Ut cum voluptatibus autem atque aperiam? Architecto voluptate quo ipsa aspernatur soluta modi neque
+                    officiis. Nisi ut voluptatibus aliquam nostrum pariatur laborum, beatae cumque nihil, soluta,
+                    architecto ipsam dolorem asperiores!</p>
             </div>
         </section>
         <section class="section" id="section-7">
@@ -69,8 +86,12 @@
                 <img src="/assets/images/icons/share-ideas.svg" alt="ideas">
             </div>
             <div class="text-container">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, quo itaque! Temporibus cupiditate aut, repellat rerum nihil accusantium commodi cumque odio architecto hic. Rerum eum nihil perferendis cumque rem nobis.
-                Ut cum voluptatibus autem atque aperiam? Architecto voluptate quo ipsa aspernatur soluta modi neque officiis. Nisi ut voluptatibus aliquam nostrum pariatur laborum, beatae cumque nihil, soluta, architecto ipsam dolorem asperiores!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, quo itaque! Temporibus cupiditate aut,
+                    repellat rerum nihil accusantium commodi cumque odio architecto hic. Rerum eum nihil perferendis
+                    cumque rem nobis.
+                    Ut cum voluptatibus autem atque aperiam? Architecto voluptate quo ipsa aspernatur soluta modi neque
+                    officiis. Nisi ut voluptatibus aliquam nostrum pariatur laborum, beatae cumque nihil, soluta,
+                    architecto ipsam dolorem asperiores!</p>
             </div>
         </section>
         <section class="section" id="section-8">
@@ -78,94 +99,106 @@
                 <img src="/assets/images/icons/games.svg" alt="games">
             </div>
             <div class="text-container">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, quo itaque! Temporibus cupiditate aut, repellat rerum nihil accusantium commodi cumque odio architecto hic. Rerum eum nihil perferendis cumque rem nobis.
-                Ut cum voluptatibus autem atque aperiam? Architecto voluptate quo ipsa aspernatur soluta modi neque officiis. Nisi ut voluptatibus aliquam nostrum pariatur laborum, beatae cumque nihil, soluta, architecto ipsam dolorem asperiores!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, quo itaque! Temporibus cupiditate aut,
+                    repellat rerum nihil accusantium commodi cumque odio architecto hic. Rerum eum nihil perferendis
+                    cumque rem nobis.
+                    Ut cum voluptatibus autem atque aperiam? Architecto voluptate quo ipsa aspernatur soluta modi neque
+                    officiis. Nisi ut voluptatibus aliquam nostrum pariatur laborum, beatae cumque nihil, soluta,
+                    architecto ipsam dolorem asperiores!</p>
             </div>
         </section>
-        <section class="section" id="section-9">
-            <div class="title-container">
-                <h2>Lorem ipsum dolor sit</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quidem at natus, quia, nihil dolor harum nisi saepe ipsam expedita accusantium eaque quis fugit? Ut saepe ad maxime ea doloremque?</p>
-            </div>
-            <div class="sdg-blocks-container">
-                <div class="sdg-block sdg-1">
-                    <p>1</p>
+
+        <!-- cards container pour l'animation entre 9-10 -->
+        <div class="cards">
+            <section class="section card1" id="section-9">
+                <div class="title-container">
+                    <h2>Lorem ipsum dolor sit</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quidem at natus, quia, nihil dolor
+                        harum
+                        nisi saepe ipsam expedita accusantium eaque quis fugit? Ut saepe ad maxime ea doloremque?</p>
                 </div>
-                <div class="sdg-block sdg-2">
-                    <p>2</p>
+                <div class="sdg-blocks-container">
+                    <div class="sdg-block sdg-1">
+                        <p>1</p>
+                    </div>
+                    <div class="sdg-block sdg-2">
+                        <p>2</p>
+                    </div>
+                    <div class="sdg-block sdg-3">
+                        <p>3</p>
+                    </div>
+                    <div class="sdg-block sdg-4">
+                        <p>4</p>
+                    </div>
+                    <div class="sdg-block sdg-5">
+                        <p>5</p>
+                    </div>
+                    <div class="sdg-block sdg-6">
+                        <p>6</p>
+                    </div>
+                    <div class="sdg-block sdg-7">
+                        <p>7</p>
+                    </div>
+                    <div class="sdg-block sdg-8">
+                        <p>8</p>
+                    </div>
+                    <div class="sdg-block sdg-9">
+                        <p>9</p>
+                    </div>
+                    <div class="sdg-block sdg-10">
+                        <p>10</p>
+                    </div>
+                    <div class="sdg-block sdg-11">
+                        <p>11</p>
+                    </div>
+                    <div class="sdg-block sdg-12">
+                        <p>12</p>
+                    </div>
+                    <div class="sdg-block sdg-13">
+                        <p>13</p>
+                    </div>
+                    <div class="sdg-block sdg-14">
+                        <p>14</p>
+                    </div>
+                    <div class="sdg-block sdg-15">
+                        <p>15</p>
+                    </div>
+                    <div class="sdg-block sdg-16">
+                        <p>16</p>
+                    </div>
+                    <div class="sdg-block sdg-17">
+                        <p>17</p>
+                    </div>
                 </div>
-                <div class="sdg-block sdg-3">
-                    <p>3</p>
+            </section>
+            <section class="section card2" id="section-10">
+                <div class="card-container">
+                    <div class="sales-points-container">
+                        <div class="sales-point active section-10-item item-1">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="sales-point section-10-item">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="sales-point section-10-item">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="sales-point section-10-item">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="sales-point section-10-item">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="sales-point section-10-item">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="sales-point section-10-item">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="sdg-block sdg-4">
-                    <p>4</p>
-                </div>
-                <div class="sdg-block sdg-5">
-                    <p>5</p>
-                </div>
-                <div class="sdg-block sdg-6">
-                    <p>6</p>
-                </div>
-                <div class="sdg-block sdg-7">
-                    <p>7</p>
-                </div>
-                <div class="sdg-block sdg-8">
-                    <p>8</p>
-                </div>
-                <div class="sdg-block sdg-9">
-                    <p>9</p>
-                </div>
-                <div class="sdg-block sdg-10">
-                    <p>10</p>
-                </div>
-                <div class="sdg-block sdg-11">
-                    <p>11</p>
-                </div>
-                <div class="sdg-block sdg-12">
-                    <p>12</p>
-                </div>
-                <div class="sdg-block sdg-13">
-                    <p>13</p>
-                </div>
-                <div class="sdg-block sdg-14">
-                    <p>14</p>
-                </div>
-                <div class="sdg-block sdg-15">
-                    <p>15</p>
-                </div>
-                <div class="sdg-block sdg-16">
-                    <p>16</p>
-                </div>
-                <div class="sdg-block sdg-17">
-                    <p>17</p>
-                </div>
-            </div>
-        </section>
-        <section class="section" id="section-10">
-            <div class="sales-points-container">
-                <div class="sales-point active">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <div class="sales-point">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <div class="sales-point">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <div class="sales-point">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <div class="sales-point">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <div class="sales-point">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <div class="sales-point">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
         <section class="section" id="section-11"></section>
         <section class="section" id="section-12"></section>
     </main>
