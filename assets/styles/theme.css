@@ -1,12 +1,14 @@
 @import url('./fonts.css');
 
+
+
 :root {
-    --color-primary: #006699;
-    --color-secondary: #125c00;
-    --color-tertiary: #ff7c43;
-    --color-quaternary: #5c0056;
-    --color-quinary: #00ff1e;
-    --font-title-1: 'FuturaStd ExtraBold', sans-serif;
+    --color-primary: #3F254E;
+    --color-secondary: #3F254E;
+    --color-tertiary: #FFEBC3;
+    /* --color-quaternary: #5c0056;
+    --color-quinary: #00ff1e; */
+    --font-title-1: 'Futura Bold', sans-serif;
     --font-title-2: 'FuturaStd Heavy', sans-serif;
     --font-title-3: 'FuturaStd Medium', sans-serif;
     --font-title-4: 'FuturaStd Book', sans-serif;
@@ -18,6 +20,9 @@
     --font-size-title-4: clamp(1.625rem, 1.75vw, 1.75rem);
     --font-size-title-5: clamp(1.2rem, 1.5vw, 1.5rem);
     --font-size-body: clamp(1.2rem, 1.5vw, 1.5rem);
+
+    --bg-color: #FFFEF8;
+
 
     --sdg-1: #E5243B;
     --sdg-2: #DDA63A;
