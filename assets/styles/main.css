@@ -3,6 +3,12 @@
 
 /* MAIN STYLING */
 
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 h1 {
     font-family: var(--font-title-1);
     font-size: var(--font-size-title-1);
@@ -48,19 +54,15 @@ p {
 
 .section {
     position: relative;
-    width: 100%;
-    height: 90vh;
+    /* height: 90vh; */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    padding: 8vh 0;
 }
 
 /* SECTION 1 - Intro */
-
-#section-1 {
-    margin-top: 100px;
-}
 
 #section-1 .intro-container {
     position: relative;
@@ -160,8 +162,8 @@ p {
     flex-direction: column;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
     background-color: blue;
+    padding: 30vh 0;
 }
 
 .title-container {
@@ -194,7 +196,8 @@ p {
 
 /* SECTION 10 - SALES POINTS */
 #section-10 {
-    height: auto;
+    height: fit-content;
+    padding: 30vh 0;
 }
 
 .sales-points-container {
@@ -208,7 +211,7 @@ p {
 
 .sales-point {
     width: 100%;
-    height: 30vh;
+    height: 20vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -218,19 +221,15 @@ p {
     padding: 0 4%;
 }
 
-.sales-point.active {
-    background-color: #000000;
-    color: #ffffff;
-}
-
 
 /* RESPONSIVE */
 
 @media only screen and (max-width: 1024px) {
     .section {
-        height: auto;
+        /* height: auto; */
         flex-direction: column;
         justify-content: flex-start;
+        padding: 15vh 0;
     }
 
     #section-1 .intro-container {
@@ -323,6 +322,10 @@ p {
 
     .sales-point {
         padding-left: 10%;
+    }
+
+    #section-10 {
+        height: fit-content;
     }
 }
 
