@@ -7,6 +7,15 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    background-color: var(--color-quinary);
+}
+
+h1, h2, h3, h4 h5, p {
+    color: var(--color-quaternary);
+}
+
+.text-light {
+    color: var(--color-quinary);
 }
 
 h1 {
@@ -161,7 +170,7 @@ p {
 #section-9 {
     flex-direction: column;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
     background-color: blue;
     padding: 30vh 0;
 }
@@ -197,7 +206,7 @@ p {
 /* SECTION 10 - SALES POINTS */
 #section-10 {
     height: fit-content;
-    padding: 30vh 0;
+    padding: 45vh 0;
 }
 
 .sales-points-container {
@@ -214,7 +223,7 @@ p {
     height: 20vh;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: left;
     align-items: center;
     background-color: #dddddd;
     margin: 1vh 0;
@@ -229,7 +238,7 @@ p {
         /* height: auto; */
         flex-direction: column;
         justify-content: flex-start;
-        padding: 15vh 0;
+        padding: 15vh 5vw;
     }
 
     #section-1 .intro-container {
@@ -321,11 +330,12 @@ p {
     }
 
     .sales-point {
-        padding-left: 10%;
+        padding-left: 5%;
     }
 
-    #section-10 {
-        height: fit-content;
+    #section-9, #section-5 {
+        padding: 15vh 1vw;
+        overflow-x: hidden;
     }
 }
 
@@ -349,7 +359,7 @@ p {
     }
 
     .title-container {
-        width: 100%;
+        width: 90%;
     }
 
     .sdg-block {

@@ -1,5 +1,6 @@
 console.log('onScroll')
 
+const showMarkers = false;
 
 // activate scrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -20,7 +21,7 @@ tlScroll.from(".section-4-item", {
          start: "top bottom",
          end: "+=200",
         scrub: 1,
-        markers: true,
+        markers: showMarkers,
         toggleActions: "play reverse play reverse"
         },
         //opacity: 0,
@@ -39,7 +40,7 @@ tlScroll.from("#logo-durabilia", {
         start: "top center",
         end: "+=200",
         scrub: 1,
-        markers: true,
+        markers: showMarkers,
         //toggleActions: "play reverse play reverse"
     },
     opacity: 0,
@@ -151,7 +152,7 @@ tlLogo.to("#logo-durabilia", {
 //         start: "top center",
 //         end: "+=200",
 //         scrub: 1,
-//         markers: true,
+//         markers: showMarkers,
 //         //toggleActions: "play reverse play reverse"
 //     },
 //     opacity: 0,
@@ -170,7 +171,7 @@ gsap.utils.toArray(".section-10-item").forEach((section, index) => {
             start: "top center",
             end: "+=100",
             scrub: 1,
-            markers: true,
+            markers: showMarkers,
             //toggleActions: "play reverse play reverse"
         },
         backgroundColor: "#000",
@@ -189,11 +190,11 @@ gsap.utils.toArray(".section-10-item").forEach((section, index) => {
             start: "bottom center",
             end: "+=250",
             scrub: 1,
-            markers: true,
+            markers: showMarkers,
             //toggleActions: "play reverse play reverse"
         },
-        backgroundColor: "#ddd",
-        color:"#000",
+        backgroundColor: "var(--color-primary)",
+        color:"var(--color-quinary)",
         duration: 0.2,
         opacity: 0.5,
         ease: "power1.inOut",

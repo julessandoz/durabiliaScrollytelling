@@ -1,11 +1,11 @@
 @import url('./fonts.css');
 
 :root {
-    --color-primary: #006699;
-    --color-secondary: #125c00;
-    --color-tertiary: #ff7c43;
-    --color-quaternary: #5c0056;
-    --color-quinary: #00ff1e;
+    --color-primary: #3F254E;
+    --color-secondary: #85BA5C;
+    --color-tertiary: #FFEBC3;
+    --color-quaternary: #373635;
+    --color-quinary: #FFFEF8;
     --font-title-1: 'FuturaStd ExtraBold', sans-serif;
     --font-title-2: 'FuturaStd Heavy', sans-serif;
     --font-title-3: 'FuturaStd Medium', sans-serif;
