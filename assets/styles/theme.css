@@ -1,5 +1,7 @@
 @import url('./fonts.css');
 
+
+
 :root {
     --color-primary: #3F254E;
     --color-secondary: #85BA5C;
@@ -18,4 +20,30 @@
     --font-size-title-4: clamp(1.625rem, 1.75vw, 1.75rem);
     --font-size-title-5: clamp(1.2rem, 1.5vw, 1.5rem);
     --font-size-body: clamp(1.2rem, 1.5vw, 1.5rem);
+
+    --bg-color: #FFFEF8;
+
+
+    --sdg-1: #E5243B;
+    --sdg-2: #DDA63A;
+    --sdg-3: #4C9F38;
+    --sdg-4: #C5192D;
+    --sdg-5: #FF3A21;
+    --sdg-6: #26BDE2;
+    --sdg-7: #FCC30B;
+    --sdg-8: #A21942;
+    --sdg-9: #FD6925;
+    --sdg-10: #DD1367;
+    --sdg-11: #FD9D24;
+    --sdg-12: #BF8B2E;
+    --sdg-13: #3F7E44;
+    --sdg-14: #0A97D9;
+    --sdg-15: #56C02B;
+    --sdg-16: #00689D;
+    --sdg-17: #19486A;
+
+
+
+
+
 }
