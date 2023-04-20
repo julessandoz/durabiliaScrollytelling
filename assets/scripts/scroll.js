@@ -99,7 +99,7 @@ tlScroll.to(".durabilia-icon", {
         start: "top+=5 top",
         end: "+=10",
         scrub: 1,
-        markers: true,
+        // markers: true,
         // pin content with lots of pinSpacing
         pin: true,
         pinSpacing: true,
@@ -123,7 +123,7 @@ tlScroll.to(".logo-text", {
       start: "top+=15 top",
       end: "+=150",
       scrub: 1,
-      markers: true,
+      // markers: true,
       // pin content with lots of pinSpacing
       pin: true,
       pinSpacing: true,
@@ -154,7 +154,7 @@ tlAvatar.to(avatarGroup.node, {
       end:"top+=160 top",
 
       scrub: 1,
-      markers: true,
+      // markers: true,
       // pin content with lots of pinSpacing
       pin: true,
       pinSpacing: true,
@@ -198,7 +198,7 @@ tlAvatar.to(avatarGroup.node, {
       start: "top+=260 top",
       end:"top+=290 top",
       scrub: 1,
-      markers: true,
+      // markers: true,
       // pin content with lots of pinSpacing
       // pin: true,
       // pinSpacing: true,
@@ -219,7 +219,7 @@ tlAvatar.to(avatarGroup.node, {
       start: "top+=320 top",
       end:"top+=380 top",
       scrub: 1,
-      markers: true,
+      // markers: true,
       // pin content with lots of pinSpacing
       // pin: true,
       // pinSpacing: true,
@@ -241,39 +241,166 @@ y: 200,
 
 
 // SECTION 2---------------------------------------------------------
-// Select the text elements you want to animate
-const textElements = gsap.utils.toArray('.section-2-text');
 
-// position section-2-text at the same place
-gsap.set('.section-2-text', { x: 0, y: 0 });
 
-// // Set the initial state of the text elements
-gsap.set(textElements, { opacity: 0, y: 50 });
+// create timeline with scrolltrigger
 
-// Animate the position and opacity of each text element using a staggered animation
-gsap.to(textElements, {
-  pin: true,
-  pinSpacing: true,
-  opacity: 1,
-  stagger: 2, // Stagger the animations by 2 seconds
-  duration: 4, // Set the duration of the animation to 4 seconds
-  ease: 'power1.inOut', // Use an easing function to control the animation
+let durationDesktop = "200px";
+
+let tl2 = gsap.timeline({
   scrollTrigger: {
-    trigger: '.element-texts',
-    start: 'top center+=200', // Start the animation 100px below the center of the viewport
-    end: 'bottom center-=200', // End the animation 100px above the center of the viewport
-    scrub: true, // Smoothly animate the position and opacity as you scroll
-    toggleActions: 'play none none none', // Only play the animation once
-    onEnter: () => {
-      // Loop through the other text elements and set their opacity to 0
-      textElements.forEach((otherTextElement) => {
-        if (otherTextElement !== textElement) {
-          gsap.set(otherTextElement, { opacity: 0 });
-        }
-      });
-    },
-  },
+    trigger: '#section-2',
+    start: 'top top',
+    end: '+=2000',
+    scrub: 1,
+    // markers: true,
+    // pin content with lots of pinSpacing
+    pin: true,
+    pinSpacing: true,
+    //toggleActions: "play reverse play reverse"
+  }
 });
+
+tl2.add('start');
+
+// animate .text-1 on tl2
+tl2.to('.text-1', {
+  x:0,
+  opacity: 1,
+  scale: 1,
+  duration: 1,
+
+  ease: "power1.inOut"
+}, 'start');
+
+// add another animation after this one to fade it out
+tl2.to('.text-1', {
+  x:0,
+  opacity: 0,
+  scale: 1,
+  duration: 1,
+
+  ease: "power1.inOut"
+  
+}, '+=1');
+
+tl2.to('.text-2', {
+  // x:-180,
+  opacity: 1,
+  scale: 1,
+  duration: 1,
+  ease: "power1.inOut"
+}, 'start+=2');
+
+tl2.to('.text-2', {
+  x:0,
+  opacity: 0,
+  scale: 1,
+  duration: 1,
+
+  ease: "power1.inOut"
+  
+}, '+=3');
+
+tl2.to('.text-3', {
+  // x:-180,
+  opacity: 1,
+  scale: 1,
+  duration: 1,
+  ease: "power1.inOut"
+}, 'start+=4');
+
+tl2.to('.text-3', {
+  x:0,
+  opacity: 0,
+  scale: 1,
+  duration: 1,
+
+  ease: "power1.inOut"
+  
+}, '+=5');
+
+
+
+// animations on  .text-1 .text-2 and .text-3
+// pin section-2 on enter
+
+// pin #section-2 and animate .text-1, text-2 and text-3 opacity to 1
+// tl2.to('.text-1', {
+//   scrollTrigger: {
+//     trigger: '#section-2',
+//     start: 'top top',
+//     end: '+=100',
+//     scrub: 1,
+//     markers: true,
+//     // pin content with lots of pinSpacing
+//     pin: true,
+//     pinSpacing: true,
+//     //toggleActions: "play reverse play reverse"
+//   },
+//   // x:-180,
+//   opacity: 1,
+//   scale: 1,
+//   duration: 1,
+//   ease: "power1.inOut"
+// }, 'start');
+
+// tl2.to('.text-2', {
+//   scrollTrigger: {
+//     trigger: '#section-2',
+//     start: 'top+=100 top',
+//     end: '+=200',
+//     scrub: 1,
+//     markers: true,
+//     // pin content with lots of pinSpacing
+//     pin: true,
+//     pinSpacing: true,
+//     //toggleActions: "play reverse play reverse"
+//   },
+//   // x:-180,
+//   opacity: 1,
+//   scale: 1,
+//   duration: 1,
+//   ease: "power1.inOut"
+// }, 'start');
+
+
+
+
+
+// Select the text elements you want to animate
+// const textElements = gsap.utils.toArray('.section-2-text');
+
+// // position section-2-text at the same place
+// gsap.set('.section-2-text', { x: 0, y: 0 });
+
+// // // Set the initial state of the text elements
+// gsap.set(textElements, { opacity: 0, y: 50 });
+
+// // Animate the position and opacity of each text element using a staggered animation
+// gsap.to(textElements, {
+//   pin: true,
+//   pinSpacing: true,
+//   opacity: 1,
+//   stagger: 2, // Stagger the animations by 2 seconds
+//   duration: 4, // Set the duration of the animation to 4 seconds
+//   ease: 'power1.inOut', // Use an easing function to control the animation
+//   scrollTrigger: {
+//     trigger: '.element-texts',
+//     start: 'top center+=200', // Start the animation 100px below the center of the viewport
+//     end: 'bottom center-=200', // End the animation 100px above the center of the viewport
+//     scrub: true, // Smoothly animate the position and opacity as you scroll
+//     toggleActions: 'play none none none', // Only play the animation once
+//     onEnter: () => {
+//       // Loop through the other text elements and set their opacity to 0
+//       textElements.forEach((otherTextElement) => {
+//         if (otherTextElement !== textElement) {
+//           gsap.set(otherTextElement, { opacity: 0 });
+//         }
+//       });
+//     },
+//   },
+// });
 
 
 // opacity 0 at top+= 290
