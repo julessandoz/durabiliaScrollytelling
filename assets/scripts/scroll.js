@@ -1,5 +1,6 @@
 console.log('onScroll')
 
+const showMarkers = true;
 
 // activate scrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -438,7 +439,7 @@ gsap.utils.toArray(".section-10-item").forEach((section, index) => {
           start: "bottom+=600 center",
           end: "+=200",
           scrub: 1,
-          // markers: true,
+          // markers: showMarkers,
           //toggleActions: "play reverse play reverse"
       },
       backgroundColor: "#000",
@@ -457,7 +458,7 @@ gsap.utils.toArray(".section-10-item").forEach((section, index) => {
           start: "bottom+=600 center",
           end: "+=350",
           scrub: 1,
-          // markers: true,
+          // markers: showMarkers,
           //toggleActions: "play reverse play reverse"
       },
       backgroundColor: "#ddd",
@@ -632,7 +633,7 @@ drawSquare(x, y, width, width, color);
 //          start: "top bottom",
 //          end: "+=200",
 //         scrub: 1,
-//         // markers: true,
+//         // markers: showMarkers,
 //         toggleActions: "play reverse play reverse"
 //         },
 //         //opacity: 0,
@@ -651,7 +652,7 @@ drawSquare(x, y, width, width, color);
 //         start: "top center",
 //         end: "+=200",
 //         scrub: 1,
-//         // markers: true,
+//         // markers: showMarkers,
 //         //toggleActions: "play reverse play reverse"
 //     },
 //     opacity: 0,
@@ -746,7 +747,7 @@ drawSquare(x, y, width, width, color);
 //       scrub: true,
 //       pin: false,
 //       pinSpacing: false,
-//       markers: true,
+//       markers: showMarkers,
 //     }
 //   });
 
@@ -792,7 +793,7 @@ drawSquare(x, y, width, width, color);
 //       end: "center top",
 //       scrub: true,
 //       pinSpacing: false,
-//       markers: true,
+//       markers: showMarkers,
 //     }
 //   });
 
@@ -833,7 +834,7 @@ drawSquare(x, y, width, width, color);
 //         start: "top center",
 //         end: "+=200",
 //         scrub: 1,
-//         markers: true,
+//         markers: showMarkers,
 //         //toggleActions: "play reverse play reverse"
 //     },
 //     opacity: 0,

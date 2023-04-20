@@ -98,16 +98,13 @@ opacity: 0;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: #dddddd;
+    background-color: var(--color-tertiary);
     margin: 1vh 0;
 }
 
-.sales-point.active {
-    background-color: #000000;
-    color: #ffffff;
+.sales-point-text {
+    color: inherit !important;
 }
-
-
 
 .card-container {
     height: 100vh;
