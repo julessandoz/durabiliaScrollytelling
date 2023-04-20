@@ -65,6 +65,8 @@
 }
 
 
+
+
 .background-text {
     position: absolute;
     z-index: 9999;
@@ -76,24 +78,28 @@
     position: absolute;
     top: 20%;
     left: 10%;
-    font-size: 20px;
-    color: rgb(161, 35, 35);
+
+
   }
   
   .bg-text-2 {
     position: absolute;
-    top: 50%;
-    right: 10%;
-    font-size: 20px;
-    color: rgb(141, 24, 24);
+    top: 30%;
+left: 10%;
+
   }
   
   .bg-text-3 {
     position: absolute;
     bottom: 10%;
-    left: 40%;
-    font-size: 20px;
-    color: rgb(153, 21, 21);
+    left: 10%;
+
+  }
+
+  .background-text{
+    font-family: var(--font-title-3);
+    color: var(--color-secondary);
+    font-size: 82px;
   }
 
 .avatarContainer{
@@ -170,6 +176,8 @@ opacity: 0;
 .sect9-cont {
     min-height: 100vh;
   }
+
+
 
 /* avatars */
 

@@ -247,17 +247,20 @@ bgTl.add('play');
 
 
 // SLIDE 1------------------------
-  bgTl.fromTo('.bg-text-1',{x: -600}, {
+
+// background 1
+  bgTl.fromTo(['.bg-text-1', '.bg-text-2', '.bg-text-3'],{x: -600}, {
     x:2000,
     scale: 1,
     duration: 10,
     repeat: -1,
-    ease: "power1.inOut"
+    ease: "power1.inOut",
+    stagger: 1,
   }, 'play');
 
 tl2.add('start');
 
-// Premiere slide
+
 tl2.to('.text-1', {
   x:0,
   opacity: 1,
@@ -280,10 +283,15 @@ tl2.to('.text-1', {
   opacity: 0,
   scale: 1,
   duration: 1,
-
   ease: "power1.inOut"
-  
-}, '+=1');
+}, 'start+=1')
+
+.to('.bg-text-1', {
+  opacity: 0,
+  duration: 1,
+  ease: "power1.inOut"
+  }, 'start+=1')
+
 // FIN SLIDE 1------------------------
 
 
@@ -296,7 +304,14 @@ tl2.to('.text-2', {
   scale: 1,
   duration: 1,
   ease: "power1.inOut"
-}, 'start+=2');
+}, 'start+=2')
+
+.to('.bg-text-2', {
+  opacity: 1,
+  duration: 1,
+  ease: "power1.inOut"
+  }, 'start+=2')
+
 
 tl2.to('.text-2', {
   x:0,
@@ -306,7 +321,15 @@ tl2.to('.text-2', {
 
   ease: "power1.inOut"
   
-}, '+=3');
+}, 'start+=3')
+.to('.bg-text-2', {
+  opacity: 0,
+  duration: 1,
+  ease: "power1.inOut"
+  }, 'start+=3');
+
+// FIN SLIDE 2------------------------
+// SLIDE 3------------------------
 
 tl2.to('.text-3', {
   // x:-180,
@@ -314,7 +337,13 @@ tl2.to('.text-3', {
   scale: 1,
   duration: 1,
   ease: "power1.inOut"
-}, 'start+=4');
+}, 'start+=4')
+.to('.bg-text-3', {
+  opacity: 1  ,
+  duration: 1,
+  ease: "power1.inOut"
+  }, 'start+=4')
+
 
 tl2.to('.text-3', {
   x:0,
@@ -324,7 +353,14 @@ tl2.to('.text-3', {
 
   ease: "power1.inOut"
   
-}, '+=5');
+}, 'start+=5')
+.to('.bg-text-3', {
+  opacity: 0,
+  duration: 1,
+  ease: "power1.inOut"
+  }, 'start+=5');
+
+
 
 
 
