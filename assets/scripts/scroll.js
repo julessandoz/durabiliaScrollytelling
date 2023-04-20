@@ -249,12 +249,12 @@ bgTl.add('play');
 // SLIDE 1------------------------
 
 // background 1
-  bgTl.fromTo(['.bg-text-1', '.bg-text-2', '.bg-text-3'],{x: -600}, {
-    x:2000,
+  bgTl.fromTo(['.bg-text-1', '.bg-text-2', '.bg-text-3'],{x: -200}, {
+    x:1600,
     scale: 1,
     duration: 10,
     repeat: -1,
-    ease: "power1.inOut",
+    ease: "none",
     stagger: 1,
   }, 'play');
 
