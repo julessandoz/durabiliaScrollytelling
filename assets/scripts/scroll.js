@@ -14,65 +14,14 @@ gsap.registerPlugin(MotionPathPlugin);
 
 
 
-// SECTION 1------------------------------------------------
-// creation canvas et petit triangle
-// create a new SVG.js canvas
-let draw = SVG().addTo('.avatarContainer');
-
-// make draw full with and height, position absolute and z-index 2
-draw.size('1000', '600').style('position: absolute; z-index: 2;');
-
-// create a triangle
-let triangle = draw.polygon('0,50 25,0 50,50').fill('#FFEBC3').stroke({ width: 3, color: '#EED4A0' })
-
-
-// create a <g> element to hold the eyes
-let avatarGroup = draw.group().addClass('avatar');
-
-// create the left eye
-let leftEye = draw.rect(10, 10).radius(5).fill('#000000').move(47, 110);
-
-// create the right eye
-let rightEye = draw.rect(10, 10).radius(5).fill('#000000').move(23, 110);
+// SECTION 1------------------------------------------------------------------------------------------------------------------------------------
 
 
 
-// add the eyes to the <g> element
-avatarGroup.add(leftEye);
-avatarGroup.add(rightEye);
-avatarGroup.move(11, 19);
-avatarGroup.add(triangle);
-
-avatarGroup.move(300,200)
+// ANIMATION ICONE DURABILIA-----------------------------------------------------------
 
 
 
-
-// change leftEye z-index to 4
-leftEye.front();
-// and triangle to back
-triangle.back();
-
-// create an arc path with id "motionPath" at avatarGroup position
-let motionPath = draw.path("M 50 50 A 50 50 0 0 1 150 50").id("motionPath").move(avatarGroup.x(), avatarGroup.y()).fill('none').stroke('none');
-
-// // create a M2,2 Q8,2 8,8 T2,2 path with id"path"
-// let path = draw.path('M2,2 Q8,2 8,8 T2,2').id('path');
-
-// // create a path2 of M2,5 S2,-2 3,5 S7,8 6,4
-// let path2 = draw.path('M2,5 S2,-2 3,5 S7,8 6,4').id('path2');
-
-
-
-
-
-
-// animation logo durabilia-----------------
-
-// new timeline
-
-// make avatarGroup opacity 0
-avatarGroup.opacity(0);
 
 let tl = gsap.timeline({});
 let tlScroll = gsap.timeline({});
@@ -87,10 +36,6 @@ let floatIcon = gsap.to(".durabilia-icon", {
   yoyo: true,
   repeat: -1,
   })
-
-
-
-
 
 
 // from opacity 0 to 1 and scale 1 to 0
@@ -115,7 +60,8 @@ tlScroll.to(".durabilia-icon", {
     ease: "power1.inOut"
 }, 'start');
 
-// paus tl when tlScroll is at 0
+
+        // ANIMATION TEXT--------------------------
 
 
 tlScroll.to(".logo-text", {
@@ -136,16 +82,49 @@ opacity:1,
   ease: "power1.inOut"
 }, 'start');
 
+// FIN ANIM DURABILIA---------------------------------------------------
 
 
+//CREATION DE l'AVATAR-------------------------------------------------
+// creation canvas et petit triangle
+// create a new SVG.js canvas
+let draw = SVG().addTo('.avatarContainer');
 
-let floatAvatar = gsap.to(avatarGroup.node, {
-  y: "-=20",
-  duration: 1,
-  ease: "power1.inOut",
-  yoyo: true,
-  repeat: -1,
-  })
+// make draw full with and height, position absolute and z-index 2
+draw.size('1000', '600').style('position: absolute; z-index: 2;');
+
+// create a triangle
+let triangle = draw.polygon('0,50 25,0 50,50').fill('#FFEBC3').stroke({ width: 3, color: '#EED4A0' })
+
+
+// create a <g> element to hold the eyes
+let avatarGroup = draw.group().addClass('avatar');
+
+// create the left eye
+let leftEye = draw.rect(10, 10).radius(5).fill('#000000').move(47, 110);
+
+// create the right eye
+let rightEye = draw.rect(10, 10).radius(5).fill('#000000').move(23, 110);
+
+
+// add the eyes to the <g> element
+avatarGroup.add(leftEye);
+avatarGroup.add(rightEye);
+avatarGroup.move(11, 19);
+avatarGroup.add(triangle);
+
+avatarGroup.move(300,200)
+
+// change leftEye z-index to 4
+leftEye.front();
+// and triangle to back
+triangle.back();
+
+// create an arc path with id "motionPath" at avatarGroup position
+let motionPath = draw.path("M 50 50 A 50 50 0 0 1 150 50").id("motionPath").move(avatarGroup.x(), avatarGroup.y()).fill('none').stroke('none');
+avatarGroup.opacity(0);
+
+// ANIMATION AVATAR-------------------------------
 
 // add to tlScroll an animation to make the avatarGroup appear and move
 tlAvatar.to(avatarGroup.node, {
@@ -225,9 +204,6 @@ tlAvatar.to(avatarGroup.node, {
       // pin: true,
       // pinSpacing: true,
       toggleActions: "play reverse play reverse",
-      // on enter pause floatAvatar
-      onEnter: () =>  floatAvatar.pause(),
-      onLeave:() => floatAvatar.play(),
 
 
   },
@@ -240,13 +216,17 @@ y: 200,
 }, 'anime');
 
 
+//FIN ANIM AVATAR--------------------------------------------
 
-// SECTION 2---------------------------------------------------------
+
+
+
+// SECTION 2---------------------------------------------------------------------
 
 
 // create timeline with scrolltrigger
 
-let durationDesktop = "200px";
+
 
 let tl2 = gsap.timeline({
   scrollTrigger: {
@@ -262,17 +242,40 @@ let tl2 = gsap.timeline({
   }
 });
 
+let bgTl = gsap.timeline({});
+bgTl.add('play');
+
+
+// SLIDE 1------------------------
+
+// background 1
+  bgTl.fromTo(['.bg-text-1', '.bg-text-2', '.bg-text-3'],{x: -200}, {
+    x:1600,
+    scale: 1,
+    duration: 10,
+    repeat: -1,
+    ease: "none",
+    stagger: 1,
+  }, 'play');
+
 tl2.add('start');
 
-// animate .text-1 on tl2
+
 tl2.to('.text-1', {
   x:0,
   opacity: 1,
   scale: 1,
   duration: 1,
-
   ease: "power1.inOut"
-}, 'start');
+}, 'start')
+
+// on lance l'opacité du text-bg ici
+.to('.bg-text-1', {
+  opacity: 1,
+  duration: 1,
+  ease: "power1.inOut"
+  }, 'start')
+
 
 // add another animation after this one to fade it out
 tl2.to('.text-1', {
@@ -280,10 +283,20 @@ tl2.to('.text-1', {
   opacity: 0,
   scale: 1,
   duration: 1,
-
   ease: "power1.inOut"
-  
-}, '+=1');
+}, 'start+=1')
+
+.to('.bg-text-1', {
+  opacity: 0,
+  duration: 1,
+  ease: "power1.inOut"
+  }, 'start+=1')
+
+// FIN SLIDE 1------------------------
+
+
+// SLIDE 2------------------------
+
 
 tl2.to('.text-2', {
   // x:-180,
@@ -291,7 +304,14 @@ tl2.to('.text-2', {
   scale: 1,
   duration: 1,
   ease: "power1.inOut"
-}, 'start+=2');
+}, 'start+=2')
+
+.to('.bg-text-2', {
+  opacity: 1,
+  duration: 1,
+  ease: "power1.inOut"
+  }, 'start+=2')
+
 
 tl2.to('.text-2', {
   x:0,
@@ -301,7 +321,15 @@ tl2.to('.text-2', {
 
   ease: "power1.inOut"
   
-}, '+=3');
+}, 'start+=3')
+.to('.bg-text-2', {
+  opacity: 0,
+  duration: 1,
+  ease: "power1.inOut"
+  }, 'start+=3');
+
+// FIN SLIDE 2------------------------
+// SLIDE 3------------------------
 
 tl2.to('.text-3', {
   // x:-180,
@@ -309,7 +337,13 @@ tl2.to('.text-3', {
   scale: 1,
   duration: 1,
   ease: "power1.inOut"
-}, 'start+=4');
+}, 'start+=4')
+.to('.bg-text-3', {
+  opacity: 1  ,
+  duration: 1,
+  ease: "power1.inOut"
+  }, 'start+=4')
+
 
 tl2.to('.text-3', {
   x:0,
@@ -319,99 +353,14 @@ tl2.to('.text-3', {
 
   ease: "power1.inOut"
   
-}, '+=5');
+}, 'start+=5')
+.to('.bg-text-3', {
+  opacity: 0,
+  duration: 1,
+  ease: "power1.inOut"
+  }, 'start+=5');
 
 
-
-// animations on  .text-1 .text-2 and .text-3
-// pin section-2 on enter
-
-// pin #section-2 and animate .text-1, text-2 and text-3 opacity to 1
-// tl2.to('.text-1', {
-//   scrollTrigger: {
-//     trigger: '#section-2',
-//     start: 'top top',
-//     end: '+=100',
-//     scrub: 1,
-//     markers: true,
-//     // pin content with lots of pinSpacing
-//     pin: true,
-//     pinSpacing: true,
-//     //toggleActions: "play reverse play reverse"
-//   },
-//   // x:-180,
-//   opacity: 1,
-//   scale: 1,
-//   duration: 1,
-//   ease: "power1.inOut"
-// }, 'start');
-
-// tl2.to('.text-2', {
-//   scrollTrigger: {
-//     trigger: '#section-2',
-//     start: 'top+=100 top',
-//     end: '+=200',
-//     scrub: 1,
-//     markers: true,
-//     // pin content with lots of pinSpacing
-//     pin: true,
-//     pinSpacing: true,
-//     //toggleActions: "play reverse play reverse"
-//   },
-//   // x:-180,
-//   opacity: 1,
-//   scale: 1,
-//   duration: 1,
-//   ease: "power1.inOut"
-// }, 'start');
-
-
-
-
-
-// Select the text elements you want to animate
-// const textElements = gsap.utils.toArray('.section-2-text');
-
-// // position section-2-text at the same place
-// gsap.set('.section-2-text', { x: 0, y: 0 });
-
-// // // Set the initial state of the text elements
-// gsap.set(textElements, { opacity: 0, y: 50 });
-
-// // Animate the position and opacity of each text element using a staggered animation
-// gsap.to(textElements, {
-//   pin: true,
-//   pinSpacing: true,
-//   opacity: 1,
-//   stagger: 2, // Stagger the animations by 2 seconds
-//   duration: 4, // Set the duration of the animation to 4 seconds
-//   ease: 'power1.inOut', // Use an easing function to control the animation
-//   scrollTrigger: {
-//     trigger: '.element-texts',
-//     start: 'top center+=200', // Start the animation 100px below the center of the viewport
-//     end: 'bottom center-=200', // End the animation 100px above the center of the viewport
-//     scrub: true, // Smoothly animate the position and opacity as you scroll
-//     toggleActions: 'play none none none', // Only play the animation once
-//     onEnter: () => {
-//       // Loop through the other text elements and set their opacity to 0
-//       textElements.forEach((otherTextElement) => {
-//         if (otherTextElement !== textElement) {
-//           gsap.set(otherTextElement, { opacity: 0 });
-//         }
-//       });
-//     },
-//   },
-// });
-
-
-// opacity 0 at top+= 290
-
-
-
-// make avatar float and rotate
-
-
-// add to tlScroll an animation to make the avatarGroup appear and follow a path2
 
 
 
