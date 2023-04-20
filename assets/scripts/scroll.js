@@ -262,17 +262,36 @@ let tl2 = gsap.timeline({
   }
 });
 
+let bgTl = gsap.timeline({});
+bgTl.add('play');
+
+// animation du text en continue
+  bgTl.fromTo('.bg-text-1',{x: -600}, {
+    x:2000,
+    scale: 1,
+    duration: 10,
+    repeat: -1,
+    ease: "power1.inOut"
+  }, 'play');
+
 tl2.add('start');
 
-// animate .text-1 on tl2
+// Premiere slide
 tl2.to('.text-1', {
   x:0,
   opacity: 1,
   scale: 1,
   duration: 1,
-
   ease: "power1.inOut"
-}, 'start');
+}, 'start')
+
+// on lance l'opacité du text-bg ici
+.to('.bg-text-1', {
+  opacity: 1,
+  duration: 1,
+  ease: "power1.inOut"
+  }, 'start')
+
 
 // add another animation after this one to fade it out
 tl2.to('.text-1', {
@@ -284,6 +303,8 @@ tl2.to('.text-1', {
   ease: "power1.inOut"
   
 }, '+=1');
+
+
 
 tl2.to('.text-2', {
   // x:-180,
