@@ -248,15 +248,86 @@ bgTl.add('play');
 
 // SLIDE 1------------------------
 
-// background 1
-  bgTl.fromTo(['.bg-text-1', '.bg-text-2', '.bg-text-3'],{x: -200}, {
-    x:1600,
-    scale: 1,
-    duration: 10,
-    repeat: -1,
-    ease: "none",
-    stagger: 1,
-  }, 'play');
+// take bg-text-1 text and repeat it on a line
+// let bgText1 = document.querySelector('.bg-text-1');
+
+// for (let i = 0; i < 6; i++) {
+//   let bgText1Clone = bgText1.cloneNode(true);
+//   bgText1Clone.classList.add('bg-text-1-clone');
+//   bgText1.parentNode.appendChild(bgText1Clone);
+//   // move the clone to the right
+//   bgText1Clone.style.left = i * 420 + 'px';
+//   // add the clone to the timeline
+//   bgTl.fromTo(bgText1Clone, {x: -6000}, {
+//     x:1600,
+//     scale: 1,
+//     duration: 10,
+//     repeat: -1, 
+//     ease: "none",
+
+//   }, 'play');
+
+// }
+
+gsap.set('.infiniterapper',{xPercent:-50,yPercent:-50})
+gsap.set('#no02',{y:50})
+
+
+// clone .box 5 times and add to #no01
+
+
+// get screen size as boxWidth
+
+
+var boxWidth = 250,
+    totalWidth = boxWidth * 7,  //  * n of boxes
+    no01 = document.querySelectorAll("#no01 .box"),
+    no02 = document.querySelectorAll("#no02 .box"),
+    dirFromLeft = "+=" + totalWidth,
+    dirFromRight = "-=" + totalWidth;
+
+var mod = gsap.utils.wrap(0, totalWidth);
+
+function marquee(which, time, direction){
+  gsap.set(which, {
+    x:function(i) {
+      return i * boxWidth;
+    }
+  });
+  var action = gsap.timeline()
+  .to(which,  {
+  x: direction,
+  modifiers: {
+    x: x => mod(parseFloat(x)) + "px"
+  },
+    duration:time, ease:'none',
+    repeat:-1,
+  });
+  return action
+}
+
+var master = gsap.timeline({paused:true})
+.add(marquee(no01, 15, dirFromLeft))
+.add(marquee(no02, 20, dirFromRight),0)
+
+// =============================
+
+var action = gsap.timeline({defaults: {duration: 1, ease:'none'},
+  scrollTrigger: {
+    trigger: "#section-2",
+    //scrub: 0.5,
+    start: 'top top',
+    end: "bottom top",
+    onEnter: isActive => master.play(),
+    onLeave: isActive => master.pause(),
+    onLeaveBack: isActive => master.pause(),
+    onEnterBack: isActive => master.play(),
+    markers:true
+  }})
+
+
+
+
 
 tl2.add('start');
 
@@ -270,11 +341,11 @@ tl2.to('.text-1', {
 }, 'start')
 
 // on lance l'opacité du text-bg ici
-.to('.bg-text-1', {
-  opacity: 1,
-  duration: 1,
-  ease: "power1.inOut"
-  }, 'start')
+// .to('.bg-text-1', {
+//   opacity: 1,
+//   duration: 1,
+//   ease: "power1.inOut"
+//   }, 'start')
 
 
 // add another animation after this one to fade it out
@@ -286,11 +357,11 @@ tl2.to('.text-1', {
   ease: "power1.inOut"
 }, 'start+=1')
 
-.to('.bg-text-1', {
-  opacity: 0,
-  duration: 1,
-  ease: "power1.inOut"
-  }, 'start+=1')
+// .to('.bg-text-1', {
+//   opacity: 0,
+//   duration: 1,
+//   ease: "power1.inOut"
+//   }, 'start+=1')
 
 // FIN SLIDE 1------------------------
 
@@ -306,11 +377,11 @@ tl2.to('.text-2', {
   ease: "power1.inOut"
 }, 'start+=2')
 
-.to('.bg-text-2', {
-  opacity: 1,
-  duration: 1,
-  ease: "power1.inOut"
-  }, 'start+=2')
+// .to('.bg-text-2', {
+//   opacity: 1,
+//   duration: 1,
+//   ease: "power1.inOut"
+//   }, 'start+=2')
 
 
 tl2.to('.text-2', {
@@ -322,11 +393,11 @@ tl2.to('.text-2', {
   ease: "power1.inOut"
   
 }, 'start+=3')
-.to('.bg-text-2', {
-  opacity: 0,
-  duration: 1,
-  ease: "power1.inOut"
-  }, 'start+=3');
+// .to('.bg-text-2', {
+//   opacity: 0,
+//   duration: 1,
+//   ease: "power1.inOut"
+//   }, 'start+=3');
 
 // FIN SLIDE 2------------------------
 // SLIDE 3------------------------
@@ -338,11 +409,11 @@ tl2.to('.text-3', {
   duration: 1,
   ease: "power1.inOut"
 }, 'start+=4')
-.to('.bg-text-3', {
-  opacity: 1  ,
-  duration: 1,
-  ease: "power1.inOut"
-  }, 'start+=4')
+// .to('.bg-text-3', {
+//   opacity: 1  ,
+//   duration: 1,
+//   ease: "power1.inOut"
+//   }, 'start+=4')
 
 
 tl2.to('.text-3', {
@@ -354,11 +425,11 @@ tl2.to('.text-3', {
   ease: "power1.inOut"
   
 }, 'start+=5')
-.to('.bg-text-3', {
-  opacity: 0,
-  duration: 1,
-  ease: "power1.inOut"
-  }, 'start+=5');
+// .to('.bg-text-3', {
+//   opacity: 0,
+//   duration: 1,
+//   ease: "power1.inOut"
+//   }, 'start+=5');
 
 
 
