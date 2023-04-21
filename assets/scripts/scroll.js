@@ -279,14 +279,16 @@ gsap.set('#no02',{y:50})
 // get screen size as boxWidth
 
 
-var boxWidth = 250,
+// CORRIGER ICI LA WIDTH POUR LE TEXT
+
+let boxWidth = 500,
     totalWidth = boxWidth * 7,  //  * n of boxes
     no01 = document.querySelectorAll("#no01 .box"),
     no02 = document.querySelectorAll("#no02 .box"),
     dirFromLeft = "+=" + totalWidth,
     dirFromRight = "-=" + totalWidth;
 
-var mod = gsap.utils.wrap(0, totalWidth);
+let mod = gsap.utils.wrap(0, totalWidth);
 
 function marquee(which, time, direction){
   gsap.set(which, {
@@ -302,11 +304,12 @@ function marquee(which, time, direction){
   },
     duration:time, ease:'none',
     repeat:-1,
-  });
+  })
+  // set opacity depending on the one reching right
   return action
 }
 
-var master = gsap.timeline({paused:true})
+let master = gsap.timeline({paused:true})
 .add(marquee(no01, 15, dirFromLeft))
 .add(marquee(no02, 20, dirFromRight),0)
 
