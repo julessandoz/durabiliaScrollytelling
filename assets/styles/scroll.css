@@ -65,12 +65,19 @@
 }
 
 
-
+/* .allTitles{
+    position: absolute;
+    width: 200%;
+    height: 20%;
+    top: 5%;
+    left: 20%;
+} */
 
 .infiniteWrapper{
     position:absolute;
     width:120vw;
     height:50px;
+    top: 5%;
     /* left:10%; */
     /* right: 40%; */
     /* top:150vh; */
@@ -81,6 +88,7 @@
     position:absolute;
     width: 400px;
     height:50px;
+
 
 
     font-family: var(--font-title-3);
@@ -96,6 +104,14 @@
     width: 100%;
 
   }
+
+
+  /* initial 0 opacity for  infinite text */
+
+  #no01, #no02, #no03 {
+    opacity: 0;
+  }
+
 
 
 
