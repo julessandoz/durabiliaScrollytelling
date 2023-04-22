@@ -1,0 +1,40 @@
+.infiniteWrapper{
+    position:absolute;
+    width:120vw;
+    height:50px;
+    top: 5%;
+    /* left:10%; */
+    /* right: 40%; */
+    /* top:150vh; */
+
+
+  }
+  .infiniteWrapper .box{
+    position:absolute;
+    width: 400px;
+    height:50px;
+
+
+
+    font-family: var(--font-title-3);
+    color: var(--color-secondary);
+    font-size: 82px;
+    line-height:60px;
+    text-align:center;
+  }
+  .infiniteWrapper .boxes {
+    position:relative;
+    left:-250px;
+    height: 50px;
+    width: 100%;
+
+
+  }
+
+
+  /* initial 0 opacity for  infinite text */
+
+  #no01, #no02, #no03, #no04, #no05 {
+    opacity: 0;
+  }
+

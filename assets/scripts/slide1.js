@@ -6,8 +6,8 @@ tlScroll.add('start');
 tlScroll.to(".durabilia-icon", {
     scrollTrigger: {
         trigger: "#section-1",  
-        start: "top+=5 top",
-        end: "+=10",
+        start: "top+=1% top",
+        end: "+=10%",
         scrub: 1,
         // markers: true,
         // pin content with lots of pinSpacing
