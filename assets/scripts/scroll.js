@@ -266,7 +266,15 @@ tlScroll.to(".durabilia-icon", {
   scale: 1.2,
   ease: "power1.inOut",
   motionPath: path2
-}, "start+=1");
+}, "start+=1")
+
+.to(avatarGroup.node, {
+  duration: 1,
+  y:'+=20',
+  ease: "power1.inOut",
+repeat:-1,
+yoyo:true,
+}, "start+=2");
 
 
         // ANIMATION TEXT--------------------------
@@ -493,6 +501,7 @@ tl2.to('.text-1', {
     scaleX: -1.2,
     ease: "power1.inOut",
     motionPath: path3
+    // x:"+=300",
   }, "start+=2")
   .to('.cloudGroup', {
     x: 2000,

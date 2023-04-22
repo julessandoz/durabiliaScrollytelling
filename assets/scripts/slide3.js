@@ -1,4 +1,0 @@
-// create timeline with scrolltrigger
-
-
-
