@@ -611,22 +611,6 @@ tl2.to('.element-earth', {
 }, "start+=7");
 
 
-// hide avatar
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -764,7 +748,22 @@ tl3
   
 
 
+// SECTION 4----------------------------------------------------------------------------------------------------------------------
+const cards = document.querySelectorAll('.card');
 
+cards.forEach(card => {
+  const overlay = card.querySelector('.card-overlay');
+
+  card.addEventListener('mouseenter', () => {
+    overlay.style.opacity = 1;
+    card.style.transform = 'scale(1.2)';
+  });
+
+  card.addEventListener('mouseleave', () => {
+    overlay.style.opacity = 0;
+    card.style.transform = 'scale(1)';
+  });
+});
 
 
 // SECTION 9----------------------------------------------------------------------------------------------------------------------  

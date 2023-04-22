@@ -1,6 +1,7 @@
 @import url('./theme.css');
 @import url('./slide2.css');
 @import url('./slide3.css');
+@import url('./slide4.css');
 @import url('./backgroundText.css');
 @import url('./avatar.css');
 
@@ -12,7 +13,7 @@
 
 .logo-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 60%;
