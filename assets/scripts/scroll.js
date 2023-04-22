@@ -757,18 +757,48 @@ cards.forEach(card => {
   card.addEventListener('mouseenter', () => {
     overlay.style.opacity = 1;
     card.style.transform = 'scale(1.2)';
+    card.style.zIndex= '6';
   });
 
   card.addEventListener('mouseleave', () => {
     overlay.style.opacity = 0;
     card.style.transform = 'scale(1)';
+    card.style.zIndex= '1';
   });
 });
 
 
 // SECTION 9----------------------------------------------------------------------------------------------------------------------  
 // CARRES SDG
+// Select the SDG blocks container
+const sdgContainer = document.querySelector('.sdg-blocks-container');
 
+// Select all the SDG blocks
+const sdgBlocks = sdgContainer.querySelectorAll('.sdg-block');
+
+// Loop through each SDG block
+sdgBlocks.forEach((sdgBlock) => {
+  // Select the SDG overlay
+  const sdgOverlay = sdgBlock.querySelector('.sdg-overlay');
+
+  // Hide the overlay initially
+  sdgOverlay.style.display = 'none';
+
+  // Add event listeners for mouseenter and mouseleave events
+  sdgBlock.addEventListener('mouseenter', () => {
+    // Show the overlay on mouseenter
+    sdgOverlay.style.display = 'block';
+    sdgOverlay.style.transform = 'scale(1.2)';
+    sdgOverlay.style.zIndex= '6';
+  });
+
+  sdgBlock.addEventListener('mouseleave', () => {
+    // Hide the overlay on mouseleave
+    sdgOverlay.style.display = 'none';
+    sdgOverlay.style.transform = 'scale(1)';
+    sdgOverlay.style.zIndex= '1';
+  });
+});
 
 
 // // start gsap animation on section-9
