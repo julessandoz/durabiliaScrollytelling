@@ -179,7 +179,8 @@ tlAvatar.to(avatarGroup.node, {
     scrub: 1,
     toggleActions: "play reverse play reverse"
   },
-  x:"+=600",
+  // x:"+=600",
+  xPercent:+300,
   scaleX: 1.2,
   ease: "power1.inOut",
 }, "anime+=2");
@@ -193,7 +194,8 @@ tlAvatar.to(avatarGroup.node, {
     scrub: 1,
     toggleActions: "play reverse play reverse"
   },
-  y:"+=700",
+  // y:"+=700",
+  yPercent:550,
   scaleX: -1.2,
   ease: "power1.inOut",
 }, "anime+=3");
@@ -556,46 +558,8 @@ tl2.to('.element-earth', {
 
 
 
-gsap.utils.toArray(".section-10-item").forEach((section, index) => {
-  gsap.to(section, {
-      scrollTrigger: {
-          trigger: section,
-          start: "bottom+=600 center",
-          end: "+=200",
-          scrub: 1,
-          // markers: showMarkers,
-          //toggleActions: "play reverse play reverse"
-      },
-      backgroundColor: "#000",
-      color: "#fff",
-      duration: 0.2,
-      ease: "power1.inOut",
-      delay: index * 0.1, // Stagger the animations
-      scale: 1,
 
-  });
-
-  //  REVERT TO INITIAL STATE AFTER
-  gsap.to(section, {
-      scrollTrigger: {
-          trigger: section,
-          start: "bottom+=600 center",
-          end: "+=350",
-          scrub: 1,
-          // markers: showMarkers,
-          //toggleActions: "play reverse play reverse"
-      },
-      backgroundColor: "#ddd",
-      color:"#000",
-      duration: 0.2,
-      opacity: 0.5,
-      ease: "power1.inOut",
-      // scale: 0.1 // Scale down the card
-  });
-});
-
-
-// SECTION 9------------------------------------------------  
+// SECTION 9----------------------------------------------------------------------------------------------------------------------  
 // CARRES SDG
 
 // const section = document.querySelector("#section-10");
@@ -698,6 +662,44 @@ drawSquare(x, y, width, width, color);
 
 
 
+
+// gsap.utils.toArray(".section-10-item").forEach((section, index) => {
+//   gsap.to(section, {
+//       scrollTrigger: {
+//           trigger: section,
+//           start: "bottom+=600 center",
+//           end: "+=200",
+//           scrub: 1,
+//           // markers: showMarkers,
+//           //toggleActions: "play reverse play reverse"
+//       },
+//       backgroundColor: "#000",
+//       color: "#fff",
+//       duration: 0.2,
+//       ease: "power1.inOut",
+//       delay: index * 0.1, // Stagger the animations
+//       scale: 1,
+
+//   });
+
+//   //  REVERT TO INITIAL STATE AFTER
+//   gsap.to(section, {
+//       scrollTrigger: {
+//           trigger: section,
+//           start: "bottom+=600 center",
+//           end: "+=350",
+//           scrub: 1,
+//           // markers: showMarkers,
+//           //toggleActions: "play reverse play reverse"
+//       },
+//       backgroundColor: "#ddd",
+//       color:"#000",
+//       duration: 0.2,
+//       opacity: 0.5,
+//       ease: "power1.inOut",
+//       // scale: 0.1 // Scale down the card
+//   });
+// });
 
 
 
