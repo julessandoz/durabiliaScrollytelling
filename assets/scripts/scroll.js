@@ -92,6 +92,9 @@ avatarGroup.opacity(0);
 
 // ANIMATION AVATAR=======================================================
 
+
+
+
 // add to tlScroll an animation to make the avatarGroup appear and move
 
 
@@ -140,7 +143,117 @@ const path3 = {
 
 
 
-tlAvatar.to(avatarGroup.node, {
+// tlAvatar.to(avatarGroup.node, {
+//   scrollTrigger: {
+//     trigger: "#section-1",
+//     start: "top+=260 top",
+//     end: "top+=290 top",
+//     scrub: 1,
+//     toggleActions: "play reverse play reverse"
+//   },
+//   duration: 3,
+//   opacity: 1,
+//   scale: 1.2,
+//   ease: "power1.inOut",
+//   motionPath: path2
+// }, "anime");
+
+// tlAvatar.to(avatarGroup.node, {
+//   scrollTrigger: {
+//     trigger: "#section-2",
+//     start: "top+=300 top",
+//     end: "top+=400 top",
+//     scrub: 1,
+//     toggleActions: "play reverse play reverse"
+//   },
+//   duration: 3,
+//   opacity: 1,
+//   scaleX: -1.2,
+//   ease: "power1.inOut",
+//   motionPath: path3
+// }, "anime+=1");
+
+
+// tlAvatar.to(avatarGroup.node, {
+//   scrollTrigger: {
+//     trigger: "#section-2",
+//     start: "top+=800 top",
+//     end: "top+=900 top",
+//     scrub: 1,
+//     toggleActions: "play reverse play reverse"
+//   },
+//   // x:"+=600",
+//   xPercent:+600,
+//   scaleX: 1.2,
+//   ease: "power1.inOut",
+// }, "anime+=2");
+
+
+
+// tlAvatar.to(avatarGroup.node, {
+//   scrollTrigger: {
+//     trigger: "#section-3",
+//     start: "top top",
+//     end: "top+=20% top",
+//     scrub: 1,
+//     toggleActions: "play reverse play reverse"
+//   },
+//   // x:"+=600",
+//   yPercent:-600,
+//   scaleX: -1.2,
+//   ease: "power1.inOut",
+// }, "anime+=4");
+
+
+
+// tlAvatar.to(avatarGroup.node, {
+//   scrollTrigger: {
+//     trigger: "#section-9",
+//     start: "top top",
+//     end: "top bottom",
+//     scrub: 1,
+//     toggleActions: "play reverse play reverse"
+//   },
+//   // y:"+=700",
+//   yPercent:550,
+//   scaleX: -1.2,
+//   ease: "power1.inOut",
+// }, "anime+=3");
+
+
+
+
+//FIN ANIM AVATAR==========================================================
+
+
+
+let tlScroll = gsap.timeline({});
+tlScroll.add('start');
+
+// from opacity 0 to 1 and scale 1 to 0
+tlScroll.to(".durabilia-icon", {
+    scrollTrigger: {
+        trigger: "#section-1",  
+        start: "top+=1% top",
+        end: "+=10%",
+        scrub: 1,
+        // markers: true,
+        // pin content with lots of pinSpacing
+        pin: true,
+        pinSpacing: true,
+        onEnter: () => floatIcon.pause(),
+
+        //toggleActions: "play reverse play reverse"
+    },
+    // x:-180,
+    opacity: 1,
+    scale: 0.5,
+    duration: 1,
+    ease: "power1.inOut"
+}, 'start')
+
+// ANIM AVATAR
+.to(avatarGroup.node, {
   scrollTrigger: {
     trigger: "#section-1",
     start: "top+=260 top",
@@ -153,57 +266,29 @@ tlAvatar.to(avatarGroup.node, {
   scale: 1.2,
   ease: "power1.inOut",
   motionPath: path2
-}, "anime");
+}, "start+=1");
 
-tlAvatar.to(avatarGroup.node, {
+
+        // ANIMATION TEXT--------------------------
+
+
+tlScroll.to(".logo-text", {
   scrollTrigger: {
-    trigger: "#section-2",
-    start: "top+=300 top",
-    end: "top+=400 top",
-    scrub: 1,
-    toggleActions: "play reverse play reverse"
+      trigger: "#section-1",  
+      start: "top+=15 top",
+      end: "+=150",
+      scrub: 1,
+      // markers: true,
+      // pin content with lots of pinSpacing
+      pin: true,
+      pinSpacing: true,
+
+      //toggleActions: "play reverse play reverse"
   },
-  duration: 3,
-  opacity: 1,
-  scaleX: -1.2,
-  ease: "power1.inOut",
-  motionPath: path3
-}, "anime+=1");
-
-
-tlAvatar.to(avatarGroup.node, {
-  scrollTrigger: {
-    trigger: "#section-2",
-    start: "top+=800 top",
-    end: "top+=900 top",
-    scrub: 1,
-    toggleActions: "play reverse play reverse"
-  },
-  // x:"+=600",
-  xPercent:+600,
-  scaleX: 1.2,
-  ease: "power1.inOut",
-}, "anime+=2");
-
-
-tlAvatar.to(avatarGroup.node, {
-  scrollTrigger: {
-    trigger: "#section-9",
-    start: "top top",
-    end: "top bottom",
-    scrub: 1,
-    toggleActions: "play reverse play reverse"
-  },
-  // y:"+=700",
-  yPercent:550,
-  scaleX: -1.2,
-  ease: "power1.inOut",
-}, "anime+=3");
-
-
-
-
-//FIN ANIM AVATAR==========================================================
+  // x:-180,
+opacity:1,
+  ease: "power1.inOut"
+}, 'start');
 
 
 
@@ -402,6 +487,13 @@ tl2.to('.text-1', {
     ease: "power1.inOut"
     }, 'start+=1'
   )
+  .to(avatarGroup.node, {
+    duration: 3,
+    opacity: 1,
+    scaleX: -1.2,
+    ease: "power1.inOut",
+    motionPath: path3
+  }, "start+=2")
   .to('.cloudGroup', {
     x: 2000,
     duration: 1,
@@ -502,6 +594,13 @@ tl2.to('.element-earth', {
 .to(['#no04', '#no05'], {
   opacity: 1,
 }, 'start+=7')
+.to(avatarGroup.node, {
+  // x:"+=600",
+  xPercent:+600,
+  scaleX: -1.2,
+  ease: "power1.inOut",
+}, "start+=7");
+
 
 // hide avatar
 
@@ -546,6 +645,13 @@ let tl3 = gsap.timeline({
 
 tl3
     .add('start')
+    .to(avatarGroup.node, {
+      // x:"+=600",
+      yPercent:+700,
+      scaleX: -1.2,
+      ease: "power1.inOut",
+    }, "start")
+    
     .to('.info-container-1', {
         opacity: 1,
         duration: 1,
@@ -599,7 +705,12 @@ tl3
         duration: 1,
         ease: "power1.inOut"
     }, 'start+=2')
-
+    .to(avatarGroup.node, {
+      // x:"+=600",
+      xPercent:-700,
+      scaleX: 1.2,
+      ease: "power1.inOut",
+    }, "start+=2")
 
 
     .to('.info-container-2', {
