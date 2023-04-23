@@ -915,6 +915,40 @@ drawSquare(x, y, width, width, color);
 
 
 
+// SLIDE 10
+// Select the SDG blocks container
+const atoutContainer = document.querySelector('.atouts-container');
+
+// Select all the SDG blocks
+const atouts = atoutContainer.querySelectorAll('.atout');
+
+// Loop through each SDG block
+atouts.forEach((atout) => {
+  // Select the SDG overlay
+  const atoutOverlay = atout.querySelector('.atout-overlay');
+  const closeButton = atout.querySelector('.atout-close');
+  const label = atout.querySelector('.atout-etiquette')
+
+  // Hide the overlay initially
+  atoutOverlay.style.display = 'none';
+
+  // Add event listeners for mouseenter and mouseleave events
+  label.addEventListener('click', () => {
+    // Show the overlay on mouseenter
+    atoutOverlay.style.display = 'block';
+    atoutOverlay.style.zIndex= '6';
+  });
+
+  closeButton.addEventListener('click', () => {
+    // Hide the overlay on mouseleave
+    atoutOverlay.style.display = 'none';
+    atoutOverlay.style.transform = 'scale(1)';
+    atoutOverlay.style.zIndex= '1';
+  });
+});
+
+
+
 
 
 
