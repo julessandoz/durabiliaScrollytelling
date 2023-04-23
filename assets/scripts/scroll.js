@@ -933,18 +933,28 @@ atouts.forEach((atout) => {
   // Hide the overlay initially
   atoutOverlay.style.display = 'none';
 
+  
   // Add event listeners for mouseenter and mouseleave events
   label.addEventListener('click', () => {
+    if(atoutOverlay.classList.contains('slide-out')){
+      atoutOverlay.classList.remove('slide-out')
+    }
     // Show the overlay on mouseenter
     atoutOverlay.classList.add('slide-in')
     atoutOverlay.style.display = 'block';
     atoutOverlay.style.zIndex= '6';
+  
   });
 
   closeButton.addEventListener('click', () => {
+    atoutOverlay.classList.add('slide-out')
     // Hide the overlay on mouseleave
-    atoutOverlay.style.display = 'none';
-    atoutOverlay.style.transform = 'scale(1)';
+    // await 1sec
+    setTimeout(() => {
+      atoutOverlay.style.display = 'none';
+    }, 1000);
+    
+    
     atoutOverlay.style.zIndex= '1';
   });
 });
