@@ -520,6 +520,16 @@ tl2.to('.text-3', {
 
 // SLIDE 4------------------------
 // element-earth at center of screen
+
+const planet = document.getElementById("planet");
+  const images = [];
+  const totalImages = 69;
+  const imageFolderPath = "./assets/images/planet/earth-";
+  
+    for (let i = 0; i <= totalImages; i++) {
+        images.push(imageFolderPath + i + ".png");
+    }
+
 tl2.to('.element-earth', {
   x:500,
   opacity: 1,
@@ -532,6 +542,23 @@ tl2.to('.element-earth', {
 .to(['#no04', '#no05'], {
   opacity: 1,
 }, 'start+=7')
+
+.to('.element-earth', {
+  scrollTrigger: {
+    normalizeScroll: {
+        momentum: self => Math.min(20, self.velocityY*2),
+      },
+    onUpdate: (scrollTrigger) => {
+      let progress = scrollTrigger.progress*3;
+      let imageIndex = Math.floor(progress * (totalImages+1));
+      let currentImageIndex = 0;
+        currentImageIndex = imageIndex;
+        currentImageIndex>=images.length? currentImageIndex=images.length-1:currentImageIndex;
+        let imageSrc = images[currentImageIndex];
+        planet.src = imageSrc;
+    },
+  },
+}, 'start+=9')
 
 // hide avatar
 
