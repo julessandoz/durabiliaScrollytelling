@@ -23,20 +23,20 @@ let floatIcon = gsap.to(".durabilia-icon", {
 
 
 
-  let floatAvatar = gsap.to(".avatar", {
-    y: "-=20",
-    duration: 1,
-    ease: "power1.inOut",
-    yoyo: true,
-    repeat: -1,
-    })
+  // let floatAvatar = gsap.to(".avatar", {
+  //   y: "-=20",
+  //   duration: 1,
+  //   ease: "power1.inOut",
+  //   yoyo: true,
+  //   repeat: -1,
+  //   })
 
-    let tlAvatar = gsap.timeline({
-      // floatAvatar on enter
-      onEnter: () => floatAvatar.play(),
-    });
+  //   let tlAvatar = gsap.timeline({
+  //     // floatAvatar on enter
+  //     onEnter: () => floatAvatar.play(),
+  //   });
 
-    tlAvatar.add('anime');
+  //   tlAvatar.add('anime');
 
 
 //CREATION DE l'AVATAR-------------------------------------------------
