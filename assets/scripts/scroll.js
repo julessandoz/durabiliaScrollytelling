@@ -464,12 +464,12 @@ tl2.to('.text-1', {
 
   .to(squareAvatarGroup.node, {
     rotation: 30,
-    x: 600,
+    x: 400,
     duration: 1,
     opacity: 1,
     ease: "power1.inOut",
     // x:"+=300",
-  }, "start+=4")
+  }, "start+=3")
 
   .to('.squareBody', {
     // change square fill color
@@ -663,12 +663,12 @@ let tl3 = gsap.timeline({
 
 tl3
     .add('start')
-    // .to(avatarGroup.node, {
-    //   // x:"+=600",
-    //   yPercent:+700,
-    //   scaleX: -1.2,
-    //   ease: "power1.inOut",
-    // }, "start")
+    .to(squareAvatarGroup.node, {
+      // x:"+=600",
+      yPercent:+900,
+      scaleX: -1,
+      ease: "power1.inOut",
+    }, "start")
     
     .to('.info-container-1', {
         opacity: 1,
@@ -723,12 +723,12 @@ tl3
         duration: 1,
         ease: "power1.inOut"
     }, 'start+=2')
-    // .to(avatarGroup.node, {
-    //   // x:"+=600",
-    //   xPercent:-700,
-    //   scaleX: 1.2,
-    //   ease: "power1.inOut",
-    // }, "start+=2")
+    .to(squareAvatarGroup.node, {
+      // x:"+=600",
+      xPercent:-700,
+      scaleX: 1,
+      ease: "power1.inOut",
+    }, "start+=2")
 
 
     .to('.info-container-2', {
