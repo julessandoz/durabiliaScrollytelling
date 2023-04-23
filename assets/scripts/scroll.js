@@ -253,6 +253,7 @@ let boxWidth = 700,
     no09 = document.querySelectorAll("#no09 .box"),
     no10 = document.querySelectorAll("#no10 .box"),
     no11 = document.querySelectorAll("#no11 .box"),
+    no12 = document.querySelectorAll("#no12 .box"),
 
     dirFromLeft = "+=" + totalWidth,
     dirFromRight = "-=" + totalWidth;
@@ -292,6 +293,7 @@ let master = gsap.timeline({})
 .add(marquee(no09, 25, dirFromLeft),0)
 .add(marquee(no10, 25, dirFromLeft),0)
 .add(marquee(no11, 25, dirFromLeft),0)
+.add(marquee(no12, 25, dirFromLeft),0)
 var action = gsap.timeline({defaults: {duration: 1, ease:'none'}})
 // =============================
 
@@ -462,7 +464,7 @@ tl2.to('.text-1', {
     // x:"+=300",
   }, "start+=3")
 
-  .to(squareAvatarGroup.node, {
+  .fromTo(squareAvatarGroup.node, {opacity:0}, {
     rotation: 30,
     x: 400,
     duration: 1,
@@ -663,12 +665,7 @@ let tl3 = gsap.timeline({
 
 tl3
     .add('start')
-    .to(squareAvatarGroup.node, {
-      // x:"+=600",
-      yPercent:+900,
-      scaleX: -1,
-      ease: "power1.inOut",
-    }, "start")
+
     
     .to('.info-container-1', {
         opacity: 1,
@@ -702,7 +699,17 @@ tl3
         ease: "power1.inOut"
     }, 'start+=1')
 
-
+    .to(squareAvatarGroup.node, {
+      rotation: 20,
+      x: 300,
+      y: 200,
+      duration: 1,
+  // mirror
+      scaleX: 1,
+      ease: "power1.inOut",
+      // x:"+=300",
+    }, "start+=1")
+  
 
     .from('#no07', {
         y: 300,
@@ -860,6 +867,17 @@ tlCard4.add('start')
   ease: "power1.inOut"
 }, 'start')
 
+.to(squareAvatarGroup.node, {
+  rotation: 0,
+
+  y: 500,
+  duration: 1,
+// mirror
+
+  ease: "power1.inOut",
+  // x:"+=300",
+}, "start")
+
 
 
 
@@ -944,6 +962,9 @@ let tlcard11 = gsap.timeline({
 
 tlcard11
 .add('start')
+
+
+
 .from('#no11', {
   scale: 1.2,
   duration: 1,
@@ -1055,6 +1076,29 @@ atouts.forEach((atout) => {
 });
 
 
+// SLIDE 11
+
+
+let tlcard12 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#section-11",
+    start: "top top",
+    end: "+=100%",
+    scrub: true,
+    pin: true,
+    pinSpacing: true,
+  
+  }
+});
+
+tlcard12.add('start')
+
+tlcard12.fromTo(squareAvatarGroup.node,{opacity:1}, {
+  duration: 1,
+  opacity: 0,
+  ease: "power1.inOut",
+  // x:"+=300",
+}, "start")
 
 
 
