@@ -110,6 +110,9 @@ squareAvatarGroup.move(300, 200)
 
 // and square to back
 square.back();
+squareAvatarGroup.opacity(0);
+// set .squareAvatar to opacity 0
+document.querySelector('.squareAvatar').style.opacity = 0;
 
 // ANIMATION AVATAR=======================================================
 
@@ -173,7 +176,10 @@ const path3 = {
 
 
 let tlScroll = gsap.timeline({});
-tlScroll.add('start');
+tlScroll.add('start')
+.fromTo(squareAvatarGroup.node, {opacity: 0}, {
+  opacity: 0,
+});
 
 // from opacity 0 to 1 and scale 1 to 0
 tlScroll.to(".durabilia-icon", {
@@ -1093,12 +1099,51 @@ let tlcard12 = gsap.timeline({
 
 tlcard12.add('start')
 
-tlcard12.fromTo(squareAvatarGroup.node,{opacity:1}, {
+tlcard12
+
+tlcard12.fromTo(avatarGroup.node,{opacity:0}, {
+  duration: 1,
+  opacity: 1,
+  ease: "power1.inOut",
+  // x:"+=300",
+}, "start")
+tlcard12.fromTo(avatarGroup.node,{opacity:1}, {
   duration: 1,
   opacity: 0,
   ease: "power1.inOut",
   // x:"+=300",
-}, "start")
+}, "start+=1")
 
 
+.fromTo(squareAvatarGroup.node,{opacity:1}, {
+  duration: 1,
+  opacity: 0,
+  ease: "power1.inOut",
+  // x:"+=300",
+}, "start+=1")
 
+
+let tlcard13 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#section-12",
+    start: "top top",
+    end: "+=100%",
+    scrub: true,
+    pin: true,
+    pinSpacing: true,
+  
+  }
+});
+
+tlcard13.add('start')
+
+document.querySelector('.email-overlay').style.display = 'none';
+
+document.querySelector('.button-newsletter').addEventListener('click', () => {
+  document.querySelector('.email-overlay').style.display = 'block';
+});
+
+
+document.querySelector('.close-email-overlay').addEventListener('click', () => {
+  document.querySelector('.email-overlay').style.display = 'none';
+});
