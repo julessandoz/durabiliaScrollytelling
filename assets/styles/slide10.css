@@ -1,0 +1,15 @@
+.atouts-container{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    flex-wrap: nowrap;
+    margin: auto;
+}
+
+.atouts-list{
+    width: 50%;
+}
+
+.atout{
+    padding: 20px 0px 20px 0px;
+}

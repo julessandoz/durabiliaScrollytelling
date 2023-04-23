@@ -177,7 +177,9 @@ p {
     flex-direction: column;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
+    max-height: 3000px;
+    /* height: 100vh; */
     /* height: 100vh; */
     /* height: 1800px; */
     /* background-color: blue; */
