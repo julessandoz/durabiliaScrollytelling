@@ -802,11 +802,11 @@ let tlCard9 = gsap.timeline({
   scrollTrigger: {
     trigger: "#section-9",
     start: "top top",
-    end: "bottom top",
+    end: "+=200%",
     scrub: true,
     pin: true,
     pinSpacing: true,
-    pinnedContainer: '.sect9-cont',
+    // pinnedContainer: '.sect9-cont',
     
   }
 });
@@ -836,7 +836,7 @@ const tl = gsap.timeline({
   scrollTrigger: {
     trigger: section,
     start: "top 80%",
-    end: "bottom 50%",
+    end: "bottom 70%",
     scrub: true
   }
 });
@@ -848,6 +848,18 @@ tl.from(section, {
   delay: index * 0.1,
 });
 
+});
+
+
+let tlcard11 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#section-10",
+    start: "top top",
+    end: "+=200%",
+    scrub: true,
+    pin: true,
+    pinSpacing: true,
+  }
 });
 
 
