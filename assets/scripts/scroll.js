@@ -922,6 +922,7 @@ const atoutContainer = document.querySelector('.atouts-container');
 // Select all the SDG blocks
 const atouts = atoutContainer.querySelectorAll('.atout');
 
+
 // Loop through each SDG block
 atouts.forEach((atout) => {
   // Select the SDG overlay
@@ -935,6 +936,7 @@ atouts.forEach((atout) => {
   // Add event listeners for mouseenter and mouseleave events
   label.addEventListener('click', () => {
     // Show the overlay on mouseenter
+    atoutOverlay.classList.add('slide-in')
     atoutOverlay.style.display = 'block';
     atoutOverlay.style.zIndex= '6';
   });

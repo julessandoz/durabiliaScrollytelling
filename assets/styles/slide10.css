@@ -20,8 +20,52 @@
     /* display: none; */
     position: absolute;
     top: 0;
-    left: 0;
+
     width: 40%;
     height: 100%;
     background-color: var(--color-secondary);
+
+    /* animation css */
+
+}
+
+.atouts-left .atout-overlay{
+    left: 0;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+}
+
+.atouts-right .atout-overlay{
+    right: 0;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+}
+
+
+.slide-in {
+    animation: slide-in 0.5s forwards;
+    -webkit-animation: slide-in 0.5s forwards;
+}
+
+.slide-out {
+    animation: slide-out 0.5s forwards;
+    -webkit-animation: slide-out 0.5s forwards;
+}
+    
+@keyframes slide-in {
+    100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+    100% { -webkit-transform: translateX(0%); }
+}
+    
+@keyframes slide-out {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+@-webkit-keyframes slide-out {
+    0% { -webkit-transform: translateX(0%); }
+    100% { -webkit-transform: translateX(-100%); }
 }
