@@ -1,6 +1,6 @@
-// import slide1.js script
 
 
+// init project
 console.log('onScroll')
 
 const showMarkers = true;
@@ -10,12 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 // activate motionPathPlugin
 gsap.registerPlugin(MotionPathPlugin);
-
-// Définition des timelines
-
-
-
-
 
 
 
@@ -43,7 +37,6 @@ let floatIcon = gsap.to(".durabilia-icon", {
     });
 
     tlAvatar.add('anime');
-// FIN ANIM DURABILIA---------------------------------------------------
 
 
 //CREATION DE l'AVATAR-------------------------------------------------
@@ -143,82 +136,6 @@ const path3 = {
 
 
 
-// tlAvatar.to(avatarGroup.node, {
-//   scrollTrigger: {
-//     trigger: "#section-1",
-//     start: "top+=260 top",
-//     end: "top+=290 top",
-//     scrub: 1,
-//     toggleActions: "play reverse play reverse"
-//   },
-//   duration: 3,
-//   opacity: 1,
-//   scale: 1.2,
-//   ease: "power1.inOut",
-//   motionPath: path2
-// }, "anime");
-
-// tlAvatar.to(avatarGroup.node, {
-//   scrollTrigger: {
-//     trigger: "#section-2",
-//     start: "top+=300 top",
-//     end: "top+=400 top",
-//     scrub: 1,
-//     toggleActions: "play reverse play reverse"
-//   },
-//   duration: 3,
-//   opacity: 1,
-//   scaleX: -1.2,
-//   ease: "power1.inOut",
-//   motionPath: path3
-// }, "anime+=1");
-
-
-// tlAvatar.to(avatarGroup.node, {
-//   scrollTrigger: {
-//     trigger: "#section-2",
-//     start: "top+=800 top",
-//     end: "top+=900 top",
-//     scrub: 1,
-//     toggleActions: "play reverse play reverse"
-//   },
-//   // x:"+=600",
-//   xPercent:+600,
-//   scaleX: 1.2,
-//   ease: "power1.inOut",
-// }, "anime+=2");
-
-
-
-// tlAvatar.to(avatarGroup.node, {
-//   scrollTrigger: {
-//     trigger: "#section-3",
-//     start: "top top",
-//     end: "top+=20% top",
-//     scrub: 1,
-//     toggleActions: "play reverse play reverse"
-//   },
-//   // x:"+=600",
-//   yPercent:-600,
-//   scaleX: -1.2,
-//   ease: "power1.inOut",
-// }, "anime+=4");
-
-
-
-// tlAvatar.to(avatarGroup.node, {
-//   scrollTrigger: {
-//     trigger: "#section-9",
-//     start: "top top",
-//     end: "top bottom",
-//     scrub: 1,
-//     toggleActions: "play reverse play reverse"
-//   },
-//   // y:"+=700",
-//   yPercent:550,
-//   scaleX: -1.2,
-//   ease: "power1.inOut",
-// }, "anime+=3");
 
 
 
@@ -312,6 +229,8 @@ let boxWidth = 700,
     no06 = document.querySelectorAll("#no06 .box"),
     no07 = document.querySelectorAll("#no07 .box"),
     no08 = document.querySelectorAll("#no08 .box"),
+    no09 = document.querySelectorAll("#no09 .box"),
+    no10 = document.querySelectorAll("#no10 .box"),
 
     dirFromLeft = "+=" + totalWidth,
     dirFromRight = "-=" + totalWidth;
@@ -348,6 +267,8 @@ let master = gsap.timeline({})
 .add(marquee(no06, 25, dirFromLeft),0)
 .add(marquee(no07, 25, dirFromLeft),0)
 .add(marquee(no08, 25, dirFromLeft),0)
+.add(marquee(no09, 25, dirFromLeft),0)
+.add(marquee(no10, 25, dirFromLeft),0)
 var action = gsap.timeline({defaults: {duration: 1, ease:'none'}})
 // =============================
 
@@ -830,6 +751,52 @@ sdgBlocks.forEach((sdgBlock) => {
 });
 
 
+
+
+// timeline section-4
+let tlCard4 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#section-4",
+    start: "top center",
+    end: "+=100%",
+    scrub: true,
+    pin: true,
+    pinSpacing: true,
+
+  }
+});
+
+
+
+
+tlCard4
+tlCard4.add('start')
+.from('#no09', {
+  y: 0,
+  scale: 1.2,
+  duration: 1,
+  ease: "power1.inOut"
+}, 'start')
+
+
+.to('#no09', {
+  opacity: 1,
+  duration: 1,
+  ease: "power1.inOut"
+}, 'start')
+
+
+
+
+
+
+
+
+
+
+
+// SECTION 9----------------------------------------------------------------------------------------------------------------------
+
 // // start gsap animation on section-9
 let tlCard9 = gsap.timeline({
   scrollTrigger: {
@@ -848,6 +815,22 @@ let tlCard9 = gsap.timeline({
 
 
 //   FLOATING BLOCKS ANIMATION
+tlCard9
+.add('start')
+.from('#no10', {
+  y: 0,
+  scale: 1.2,
+  duration: 1,
+  ease: "power1.inOut"
+}, 'start')
+.to('#no10', {
+  opacity: 1,
+  duration: 1,
+  ease: "power1.inOut"
+}, 'start')
+
+
+
 gsap.utils.toArray(".sdg-block").forEach((section, index) => {
 const tl = gsap.timeline({
   scrollTrigger: {
@@ -864,9 +847,6 @@ tl.from(section, {
   yoyo: true,
   delay: index * 0.1,
 });
-
-
-
 
 });
 
