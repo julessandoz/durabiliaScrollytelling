@@ -83,6 +83,34 @@ let motionPath = draw.path("M 50 50 A 50 50 0 0 1 150 50").id("motionPath").move
 
 avatarGroup.opacity(0);
 
+
+
+// CREATION DU SQUAREAVATAR-------------------------------------------------
+// create a square
+let square = draw.rect(50, 50).fill('#FFEBC3').stroke({ width: 3, color: '#EED4A0' })
+// add squareBody class to square
+square.addClass('squareBody');
+
+// create a <g> element to hold the eyes
+let squareAvatarGroup = draw.group().addClass('squareAvatar');
+
+// create the left eye
+let squareLeftEye = draw.rect(10, 10).radius(5).fill('#000000').move(20, 60);
+
+// create the right eye
+let squareRightEye = draw.rect(10, 10).radius(5).fill('#000000').move(50, 60);
+
+// add the eyes to the <g> element
+squareAvatarGroup.add(squareLeftEye);
+squareAvatarGroup.add(squareRightEye);
+squareAvatarGroup.move(11, 19);
+squareAvatarGroup.add(square);
+
+squareAvatarGroup.move(300, 200)
+
+// and square to back
+square.back();
+
 // ANIMATION AVATAR=======================================================
 
 
@@ -185,13 +213,6 @@ tlScroll.to(".durabilia-icon", {
   motionPath: path2
 }, "start+=1")
 
-.to(avatarGroup.node, {
-  duration: 1,
-  y:'+=20',
-  ease: "power1.inOut",
-repeat:-1,
-yoyo:true,
-}, "start+=2");
 
 
         // ANIMATION TEXT--------------------------
@@ -301,7 +322,7 @@ let tl2 = gsap.timeline({
   scrollTrigger: {
     trigger: '#section-2',
     start: 'top top',
-    end: '+=2000',
+    end: '+=3000',
     scrub: 1,
     // markers: true,
     // pin content with lots of pinSpacing
@@ -420,7 +441,6 @@ tl2.to('.text-1', {
   )
   .to(avatarGroup.node, {
     duration: 3,
-    opacity: 1,
     scaleX: -1.2,
     ease: "power1.inOut",
     motionPath: path3
@@ -435,6 +455,42 @@ tl2.to('.text-1', {
 
     }, 'start+=2'
   )
+  .fromTo(avatarGroup.node,{opacity:1}, {
+    duration: 1,
+    opacity: 0,
+    ease: "power1.inOut",
+    // x:"+=300",
+  }, "start+=3")
+
+  .to(squareAvatarGroup.node, {
+    rotation: 30,
+    x: 600,
+    duration: 1,
+    opacity: 1,
+    ease: "power1.inOut",
+    // x:"+=300",
+  }, "start+=4")
+
+  .to('.squareBody', {
+    // change square fill color
+    fill: '#D32D27',
+    // black borders
+    stroke: '#000',
+    duration: 1,
+    ease: "power1.inOut",
+    // x:"+=300",
+  }, "start+=5")
+
+  .to(squareAvatarGroup.node, {
+    rotation: 0,
+    x: 600,
+    duration: 1,
+// mirror
+    scaleX: -1,
+    ease: "power1.inOut",
+    // x:"+=300",
+  }, "start+=5")
+
 
 // FIN MINISLIDE 1------------------------
 
@@ -448,20 +504,22 @@ tl2.to('.text-2', {
   scale: 1,
   duration: 1,
   ease: "power1.inOut"
-}, 'start+=3')
+}, 'start+=6')
+
+
 
 .from('#no02', {
   y:300,
   scale: 1.2,
   duration: 1,
   ease: "power1.inOut"
-  }, 'start+=3')
+  }, 'start+=6')
 
 .to('#no02', {
   opacity: 1,
   duration: 1,
   ease: "power1.inOut"
-  }, 'start+=3')
+  }, 'start+=6')
 
 
 tl2.to('.text-2', {
@@ -472,28 +530,43 @@ tl2.to('.text-2', {
 
   ease: "power1.inOut"
   
-}, 'start+=4')
+}, 'start+=7')
 .to('#no02', {
   opacity: 0,
   duration: 1,
   ease: "power1.inOut"
-  }, 'start+=4');
+  }, 'start+=7');
 
 // FIN MINISLIDE 2------------------------
 // MINISLIDE 3------------------------
 
-tl2.to('.text-3', {
+
+
+
+tl2
+
+.to('.squareBody', {
+  // change square fill color
+  fill: '#FFEBC3',
+  // black borders
+  stroke: '#EED4A0',
+  duration: 1,
+  ease: "power1.inOut",
+  // x:"+=300",
+}, "start+=8")
+
+.to('.text-3', {
   // x:-180,
   opacity: 1,
   scale: 1,
   duration: 1,
   ease: "power1.inOut"
-}, 'start+=5')
+}, 'start+=8')
 .to('#no03', {
   opacity: 1  ,
   duration: 1,
   ease: "power1.inOut"
-  }, 'start+=5')
+  }, 'start+=8')
 
 
 tl2.to('.text-3', {
@@ -504,13 +577,13 @@ tl2.to('.text-3', {
 
   ease: "power1.inOut"
   
-}, 'start+=6')
+}, 'start+=9')
 
 .to('#no03', {
   opacity: 0,
   duration: 1,
   ease: "power1.inOut"
-  }, 'start+=6');
+  }, 'start+=9');
 
 // MINISLIDE 4------------------------
 // element-earth at center of screen
@@ -531,11 +604,11 @@ tl2.to('.element-earth', {
   duration: 1,
   zIndex:0,
   ease: "power1.inOut"
-}, 'start+=7')
+}, 'start+=10')
 
 .to(['#no04', '#no05'], {
   opacity: 1,
-}, 'start+=7')
+}, 'start+=10')
 
 .to('.element-earth', {
   scrollTrigger: {
@@ -552,15 +625,15 @@ tl2.to('.element-earth', {
         planet.src = imageSrc;
     },
   },
-}, 'start+=9')
+}, 'start+=12')
 
 // hide avatar
-.to(avatarGroup.node, {
+.to(squareAvatarGroup.node, {
   // x:"+=600",
   xPercent:+600,
-  scaleX: -1.2,
+  scaleX: -1,
   ease: "power1.inOut",
-}, "start+=7");
+}, "start+=10");
 
 
 
@@ -590,12 +663,12 @@ let tl3 = gsap.timeline({
 
 tl3
     .add('start')
-    .to(avatarGroup.node, {
-      // x:"+=600",
-      yPercent:+700,
-      scaleX: -1.2,
-      ease: "power1.inOut",
-    }, "start")
+    // .to(avatarGroup.node, {
+    //   // x:"+=600",
+    //   yPercent:+700,
+    //   scaleX: -1.2,
+    //   ease: "power1.inOut",
+    // }, "start")
     
     .to('.info-container-1', {
         opacity: 1,
@@ -650,12 +723,12 @@ tl3
         duration: 1,
         ease: "power1.inOut"
     }, 'start+=2')
-    .to(avatarGroup.node, {
-      // x:"+=600",
-      xPercent:-700,
-      scaleX: 1.2,
-      ease: "power1.inOut",
-    }, "start+=2")
+    // .to(avatarGroup.node, {
+    //   // x:"+=600",
+    //   xPercent:-700,
+    //   scaleX: 1.2,
+    //   ease: "power1.inOut",
+    // }, "start+=2")
 
 
     .to('.info-container-2', {
