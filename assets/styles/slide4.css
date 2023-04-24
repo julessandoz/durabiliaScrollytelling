@@ -16,9 +16,10 @@
     color: var(--bg-color);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border-radius: 5px;
+    font-size: 1.8rem
 }
 
 

@@ -177,8 +177,11 @@ p {
     flex-direction: column;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
-    /* height: 100vh; */
+    height: fit-content;
+    block-size: fit-content;
+    /* overflow-y: hidden; */
+    z-index: 3;
+    /* height: 140vh; */
     /* height: 1800px; */
     /* background-color: blue; */
     /* padding: 30vh 0; */

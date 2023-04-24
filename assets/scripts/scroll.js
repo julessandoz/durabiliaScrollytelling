@@ -816,7 +816,7 @@ sdgBlocks.forEach((sdgBlock) => {
   // Add event listeners for mouseenter and mouseleave events
   sdgBlock.addEventListener('mouseenter', () => {
     // Show the overlay on mouseenter
-    sdgOverlay.style.display = 'block';
+    sdgOverlay.style.display = 'flex';
     sdgOverlay.style.transform = 'scale(1.2)';
     sdgOverlay.style.zIndex= '6';
   });
