@@ -8,6 +8,6 @@
     height: 100%;
 }
 
-.avatar, .squareAvatar{
+.avatar, .squareAvatar, .pentagonAvatar, .hexagonAvatar, .heptagonAvatar, .octagonAvatar, .nonagonAvatar, .decagonAvatar, .circleAvatar{
     opacity: 0;
 }

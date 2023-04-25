@@ -4,20 +4,11 @@
     width: 100vw;
     height: 180%;
     max-height: 3000px;
-    /* height: 100vh; */
-    /* height: 100vh; */
-    /* height: 1800px; */
-    /* background-color: blue; */
-    /* padding: 30vh 0; */
 }
 
 .sdg-number {
     color: white;
     font-size: 32px;
-    /* position: absolute;
-top: 0;
-left: 10px;
-/* margin: 0 !important; */
     margin: 0 !important;
 }
 
@@ -43,8 +34,6 @@ left: 10px;
 }
 
 .sdg-blocks-container {
-    /* display: flex;
-    justify-content: space-around; */
     height: 200px;
     max-height: 200px;
 
@@ -59,8 +48,6 @@ left: 10px;
 
 /* make .sdg-block as squares and displayed randomly */
 .sdg-block {
-    /* flex: 0 0 clamp(100px, 8vw, 200px); */
-    /* height: clamp(80px, 8vw, 200px); */
     width: 200px;
     height: 200px;
     margin: 1vw 1vw;
@@ -68,9 +55,7 @@ left: 10px;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    /* flex-wrap: wrap; */
     border-radius: 2px;
-    /* drop shadow */
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);  
 }
 
@@ -79,11 +64,9 @@ left: 10px;
     position: absolute;
     top: 0;
     left: 0;
-    /* Add these rules to center the text */
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Add these rules to make the text fill the container */
     width: 100%;
     max-width: 100%;
     height: 100%;
@@ -91,8 +74,6 @@ left: 10px;
     font-size: 0.85rem;
     opacity: 0;
     box-sizing: border-box;
-    /* background-color: rgba(255, 255, 255, 0.9); */
-    /* Add this rule to make the text slide up on hover */
     transform: translateY(100%);
     transition: transform 0.3s ease, opacity 0.3s ease;
     padding: 15px 25px;
@@ -101,7 +82,6 @@ left: 10px;
 }
 
 .sdg-block:hover .sdg-overlay {
-    /* Add these rules to show the text on hover */
     opacity: 1;
     transform: translateY(0%);
     align-items: center;
